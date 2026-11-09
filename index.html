@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#070b16">
+<title>链上透视 · 新能源汽车产业链</title>
+<meta name="description" content="新能源汽车产业链智能体：总览 → 上/中/下游 → 细分赛道 → 企业/技术/指标，四层下钻、关键词检索、22 条本地问答与上下游关系透视。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230b1224'/%3E%3Cpath d='M14 40 L26 24 L38 40 L50 24' stroke='%235b8cff' stroke-width='6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+<body>
+<a class="skip" href="#main">跳到正文</a>
+
+<header class="topbar">
+  <div class="topbar__inner">
+    <a class="brand" href="#/node/ov" aria-label="返回产业链总览">
+      <span class="brand__mark" aria-hidden="true">NEV</span>
+      <span class="brand__text">
+        <strong>链上透视 · 新能源汽车产业链</strong>
+        <small>四层下钻 · 横向透视 · 本地问答</small>
+      </span>
+    </a>
+
+    <div class="search" role="search">
+      <span class="search__icon" aria-hidden="true"></span>
+      <input id="search-input" type="search" inputmode="search" autocomplete="off" spellcheck="false"
+             placeholder="搜索环节 / 企业 / 关键词（按 / 聚焦）" aria-label="搜索产业链节点"
+             aria-controls="search-results" aria-expanded="false">
+      <button class="search__clear" id="search-clear" type="button" aria-label="清空搜索" hidden>✕</button>
+      <div class="search__panel" id="search-results" role="listbox" aria-label="搜索结果" hidden></div>
+    </div>
+
+    <nav class="topnav">
+      <a class="topnav__link" href="#/routes">推荐路径</a>
+      <a class="topnav__link" href="#/node/ov">总览</a>
+      <button class="btn btn--primary" id="qa-open" type="button">问答</button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap" id="app">
+    <div class="loading">正在加载产业链数据…</div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <p id="footer-policy">数据口径加载中…</p>
+    <p class="footer__meta" id="footer-meta">数据加载中…</p>
+    <p class="footer__meta">纯静态站点：HTML / CSS / 原生 JS，无构建、无外部依赖、无 CDN。</p>
+  </div>
+</footer>
+
+<!-- 问答抽屉 -->
+<div class="qa" id="qa" data-open="false">
+  <div class="qa__mask" id="qa-mask"></div>
+  <section class="qa__panel" role="dialog" aria-modal="true" aria-labelledby="qa-title">
+    <header class="qa__head">
+      <div>
+        <h2 id="qa-title">产业链问答</h2>
+        <p class="qa__sub">本地关键词匹配，无需 API Key、不联网也能用</p>
+      </div>
+      <button class="qa__close" id="qa-close" type="button" aria-label="关闭问答">✕</button>
+    </header>
+    <form class="qa__form" id="qa-form">
+      <input id="qa-input" type="text" autocomplete="off" placeholder="例如：动力电池占整车成本多少？" aria-label="输入问题">
+      <button class="btn btn--primary" type="submit">提问</button>
+    </form>
+    <div class="qa__chips" id="qa-chips"></div>
+    <div class="qa__body" id="qa-body">
+      <p class="qa__empty">试试上面任意一个问题，或输入你自己的关键词，例如「换电」「碳化硅」「回收」。</p>
+    </div>
+  </section>
+</div>
+
+<noscript>
+  <div class="wrap" style="padding:40px 0">
+    <h1>需要启用 JavaScript</h1>
+    <p>本站使用原生 JS 渲染产业链数据，请在浏览器设置中允许 JavaScript 后刷新页面。</p>
+  </div>
+</noscript>
+
+<!-- 数据：chain.js 内联了一份 JSON 副本，保证 file:// 双击可用；
+     部署到服务器时优先 fetch ./data/chain.json（见 app.js） -->
+<script src="./data/chain.js"></script>
+<script src="./assets/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+# 本地打包与测试残留，不纳入仓库
+nev-chain-site.zip
+.screenshots/
+.trae-html-share-packages/

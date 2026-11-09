@@ -1,0 +1,2565 @@
+/* 自动生成文件，请勿手工编辑 -------------------------------------------------
+   由 data/chain.json + data/faq.json 生成，用于 file:// 双击打开时绕过浏览器 CORS 限制。
+   修改数据后重新生成：见 README.md「替换内容」一节。
+   --------------------------------------------------------------------------- */
+window.CHAIN_DATA = {
+  "meta": {
+    "title": "链上透视 · 新能源汽车产业链",
+    "version": "1.0",
+    "updatedAt": "2026-11",
+    "nodeCount": 56,
+    "structure": "4 层：总览(1) → 上/中/下游(3) → 细分赛道(15) → 企业/技术/指标(37)",
+    "dataPolicy": "所有价格、产能、市占率、销量类数字均为数量级参考，需以最新官方或行业口径复核；不要直接引用为精确值。",
+    "disclaimer": "本数据仅用于产业链科普与结构性理解，不构成投资建议。"
+  },
+  "segments": [
+    {
+      "id": "up",
+      "title": "上游 · 资源与材料",
+      "color": "#C08A3E"
+    },
+    {
+      "id": "mid",
+      "title": "中游 · 三电与零部件",
+      "color": "#2F6FB5"
+    },
+    {
+      "id": "down",
+      "title": "下游 · 整车与补能",
+      "color": "#2E8B62"
+    }
+  ],
+  "routes": [
+    {
+      "id": "route-resource",
+      "title": "资源派：从矿到价格",
+      "desc": "看锂价如何决定全链条毛利",
+      "trail": [
+        "ov",
+        "up",
+        "up-li",
+        "up-li-sl"
+      ]
+    },
+    {
+      "id": "route-tech",
+      "title": "技术派：从电池到一家龙头",
+      "desc": "从电芯形态一路钻到宁德时代",
+      "trail": [
+        "ov",
+        "mid",
+        "mid-bat",
+        "mid-bat-catl"
+      ]
+    },
+    {
+      "id": "route-smart",
+      "title": "智能化派：从一颗雷达到一家供应商",
+      "desc": "感知方案与硬件成本怎么下放",
+      "trail": [
+        "ov",
+        "mid",
+        "mid-adas",
+        "mid-adas-co"
+      ]
+    },
+    {
+      "id": "route-route",
+      "title": "路线之争：纯电 / 插混 / 增程",
+      "desc": "三条路线的适用边界与代表车企",
+      "trail": [
+        "ov",
+        "down",
+        "down-route",
+        "down-route-cmp"
+      ]
+    },
+    {
+      "id": "route-closedloop",
+      "title": "闭环派：退役电池回到上游",
+      "desc": "回收如何成为资源端的对冲",
+      "trail": [
+        "ov",
+        "down",
+        "down-rec",
+        "down-rec-tech"
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "id": "ov",
+      "title": "新能源汽车产业链总览",
+      "subtitle": "一张图看懂四段链条",
+      "level": 1,
+      "parentId": null,
+      "segment": "none",
+      "type": "overview",
+      "summary": "一条链四段：上游资源与材料、中游三电与零部件、下游整车与补能，最后由电池回收闭环回上游；电池吃掉整车约三到四成成本。",
+      "points": [
+        "上游（资源与材料）：锂、镍、钴、石墨 → 正极、负极、隔膜、电解液、铜铝箔",
+        "中游（三电与零部件）：电芯/PACK、驱动电机、电控与功率半导体、热管理、座舱与智驾",
+        "下游（整车与补能）：纯电/插混/增程整车、充电与换电、后市场、出口",
+        "闭环：退役电池回收湿法提取镍钴锂，回收率可达95%以上，是资源端的对冲",
+        "价值分布：上游看资源周期，中游材料毛利被两头挤压（普遍10%–25%），下游看品牌与智能化溢价【需复核】",
+        "成本大头：动力电池约占纯电整车成本30%–40%，其中正极又占电芯材料成本30%–40%【需复核】"
+      ],
+      "metrics": [
+        {
+          "name": "中国新能源汽车年销量",
+          "value": "千万辆级",
+          "caliber": "中汽协口径，含出口",
+          "asOf": "2024",
+          "verify": true
+        },
+        {
+          "name": "动力电池装机",
+          "value": "数百GWh级",
+          "caliber": "中国汽车动力电池产业创新联盟",
+          "asOf": "2024",
+          "verify": true
+        }
+      ],
+      "children": [
+        "up",
+        "mid",
+        "down"
+      ],
+      "related": [
+        "up-li-price",
+        "mid-bat-data",
+        "down-oem-sales"
+      ],
+      "sources": [
+        "中汽协",
+        "中国汽车动力电池产业创新联盟",
+        "行业公开报告"
+      ]
+    },
+    {
+      "id": "up",
+      "title": "上游：资源与材料",
+      "subtitle": "成本地板在这里",
+      "level": 2,
+      "parentId": "ov",
+      "segment": "up",
+      "type": "segment",
+      "summary": "锂、镍、钴、石墨四种资源决定中游所有材料的成本地板，材料端毛利率随锂价剧烈波动。",
+      "points": [
+        "资源端：锂（盐湖/锂辉石/云母）、镍（印尼MHP、高冰镍）、钴（刚果金）、石墨（天然/人造）",
+        "材料端四大主材：正极、负极、隔膜、电解液，合计占电芯成本九成左右【需复核】",
+        "辅材：铜箔（4.5–6μm极薄化）、铝箔、结构件、导电剂、粘结剂",
+        "核心变量：锂价周期。2022年峰值约60万元/吨 → 2025年7–10万元/吨，直接改写全链条毛利【需复核】",
+        "格局特征：资源端集中度高（澳矿、南美盐湖、印尼镍），材料端中国产能占全球主导"
+      ],
+      "metrics": [
+        {
+          "name": "碳酸锂价格",
+          "value": "7–10万元/吨",
+          "caliber": "SMM电池级碳酸锂现货均价",
+          "asOf": "2025",
+          "verify": true
+        },
+        {
+          "name": "四大主材占电芯成本",
+          "value": "约85%–90%",
+          "caliber": "行业成本拆解",
+          "asOf": "2024",
+          "verify": true
+        }
+      ],
+      "children": [
+        "up-li",
+        "up-cat",
+        "up-ane",
+        "up-sep-ele",
+        "up-foil"
+      ],
+      "related": [
+        "up-li-price",
+        "mid-bat"
+      ],
+      "sources": [
+        "SMM",
+        "公司公告",
+        "行业研究"
+      ]
+    },
+    {
+      "id": "mid",
+      "title": "中游：三电与核心零部件",
+      "subtitle": "技术与单车价值量最密集的一段",
+      "level": 2,
+      "parentId": "ov",
+      "segment": "mid",
+      "type": "segment",
+      "summary": "电池、电机、电控构成三电，加上热管理、座舱与智驾，是技术含量与单车价值量最集中的一段。",
+      "points": [
+        "三电：动力电池（成本最大）、驱动电机、电机控制器（含功率半导体）",
+        "结构创新：CTP/CTB/CTC、刀片电池、46系大圆柱，用结构换体积利用率与成本",
+        "电动化配套：热管理（热泵、集成模块）、一体化压铸、线束连接器",
+        "智能化支线：智能座舱（座舱芯片、多屏语音）、智能驾驶（感知+芯片+算法）",
+        "竞争特征：电池一超多强，电机电控国产替代加速，智驾由方案商主导"
+      ],
+      "metrics": [
+        {
+          "name": "电池占整车成本",
+          "value": "约30%–40%",
+          "caliber": "A级纯电车型估算",
+          "asOf": "2024",
+          "verify": true
+        },
+        {
+          "name": "国内方形电芯占比",
+          "value": "约90%以上",
+          "caliber": "国内装机形态结构",
+          "asOf": "2024",
+          "verify": true
+        }
+      ],
+      "children": [
+        "mid-bat",
+        "mid-edrive",
+        "mid-thm",
+        "mid-adas",
+        "mid-cockpit",
+        "mid-cast"
+      ],
+      "related": [
+        "up-cat",
+        "down-oem"
+      ],
+      "sources": [
+        "公司公告",
+        "行业研究",
+        "乘联会"
+      ]
+    },
+    {
+      "id": "down",
+      "title": "下游：整车、补能与回收",
+      "subtitle": "需求节奏与使用体验在这里",
+      "level": 2,
+      "parentId": "ov",
+      "segment": "down",
+      "type": "segment",
+      "summary": "整车品牌决定需求节奏，补能网络决定使用体验，回收环节把链条闭环回上游。",
+      "points": [
+        "整车格局：比亚迪、特斯拉领跑，吉利/长安/奇瑞/上汽/广汽跟进，新势力与华为系分食中高端",
+        "技术路线：纯电BEV、插混PHEV、增程EREV三分，2023年后插混与增程份额明显上升【需复核】",
+        "补能：公共充电桩百万台量级，超充（800V+4C）与换电并行推进【需复核】",
+        "后市场：三电维修、新能源专属车险、二手车残值体系仍在形成",
+        "出口：欧洲（反补贴税）、东南亚（本地建厂）、中东与拉美是三条主线",
+        "回收：湿法回收镍钴锂，白名单企业 + 车企/电池厂自建闭环"
+      ],
+      "metrics": [
+        {
+          "name": "新能源乘用车零售渗透率",
+          "value": "约45%–50%",
+          "caliber": "乘联会零售口径",
+          "asOf": "2024",
+          "verify": true
+        },
+        {
+          "name": "公共充电桩保有量",
+          "value": "百万台量级",
+          "caliber": "中国充电联盟，仅公共桩",
+          "asOf": "2024",
+          "verify": true
+        }
+      ],
+      "children": [
+        "down-oem",
+        "down-route",
+        "down-chg",
+        "down-rec"
+      ],
+      "related": [
+        "mid-bat",
+        "up-li"
+      ],
+      "sources": [
+        "乘联会",
+        "中国充电联盟",
+        "海关总署"
+      ]
+    },
+    {
+      "id": "up-li",
+      "title": "锂资源",
+      "subtitle": "盐湖 / 锂辉石 / 云母三条成本曲线",
+      "level": 3,
+      "parentId": "up",
+      "segment": "up",
+      "type": "track",
+      "summary": "锂是电池成本的第一变量，三条来源的成本曲线决定价格下限：盐湖最低、锂辉石居中、云母最高。",
+      "points": [
+        "三种来源：盐湖卤水（成本最低，约3–5万元/吨LCE）、锂辉石（约4–8万元/吨）、锂云母（约6–10万元/吨）【需复核】",
+        "资源分布：南美锂三角（智利、阿根廷）、澳大利亚锂辉石、中国青海/西藏盐湖与江西宜春云母、非洲（津巴布韦、马里）",
+        "中国企业两条路：天齐买矿（Greenbushes权益）、赣锋全球布局盐湖+锂辉石+黏土",
+        "价格传导：锂价→正极→电芯→整车，通常滞后1–2个季度",
+        "周期属性极强：扩产周期3–5年，价格暴涨暴跌是常态"
+      ],
+      "metrics": [
+        {
+          "name": "全球锂资源量",
+          "value": "约1亿吨LCE级",
+          "caliber": "USGS口径，资源量非储量",
+          "asOf": "2024",
+          "verify": true
+        },
+        {
+          "name": "碳酸锂价格",
+          "value": "7–10万元/吨",
+          "caliber": "SMM电池级现货均价",
+          "asOf": "2025",
+          "verify": true
+        }
+      ],
+      "children": [
+        "up-li-sl",
+        "up-li-price",
+        "up-li-co"
+      ],
+      "related": [
+        "up-cat-lfp",
+        "up-li-price"
+      ],
+      "sources": [
+        "USGS",
+        "SMM",
+        "公司公告"
+      ]
+    },
+    {
+      "id": "up-cat",
+      "title": "正极材料",
+      "subtitle": "铁锂与三元两条主线",
+      "level": 3,
+      "parentId": "up",
+      "segment": "up",
+      "type": "track",
+      "summary": "正极是电芯成本最大项，铁锂与三元两条主线，2023年后铁锂凭成本与安全重新占优。",
+      "points": [
+        "成本占比：正极约占电芯材料成本30%–40%，是降本主战场【需复核】",
+        "铁锂路线：压实密度、低温性能、快充倍率是迭代方向",
+        "三元路线：高镍8系/9系、单晶化、低钴化，主打高能量密度与高端车型",
+        "新路线：锰铁锂（LMFP）兼顾能量密度与成本，处于放量前期",
+        "格局：铁锂正极中国厂商主导，三元正极海外客户占比更高"
+      ],
+      "metrics": [
+        {
+          "name": "铁锂装机占比",
+          "value": "约70%左右",
+          "caliber": "国内动力电池分材料体系装机",
+          "asOf": "2024",
+          "verify": true
+        },
+        {
+          "name": "正极在电芯材料成本占比",
+          "value": "30%–40%",
+          "caliber": "行业成本拆解",
+          "asOf": "2024",
+          "verify": true
+        }
+      ],
+      "children": [
+        "up-cat-lfp",
+        "up-cat-ncm",
+        "up-cat-co"
+      ],
+      "related": [
+        "up-li",
+        "mid-bat-data"
+      ],
+      "sources": [
+        "中国汽车动力电池产业创新联盟",
+        "公司公告"
+      ]
+    },
+    {
+      "id": "up-ane",
+      "title": "负极材料",
+      "subtitle": "人造石墨为主，硅碳是下一站",
+      "level": 3,
+      "parentId": "up",
+      "segment": "up",
+      "type": "track",
+      "summary": "负极以人造石墨为主，石墨化环节吃掉大部分成本，硅碳是提升能量密度的下一站。",
+      "points": [
+        "类型：人造石墨（主流）、天然石墨（成本低）、硅碳/硅氧（高端，掺硅5%–10%）",
+        "成本结构：焦类原料 + 石墨化电费，石墨化自供率直接决定毛利",
+        "技术趋势：快充负极（二次造粒、碳包覆）、硅碳在46系大圆柱与高端车型上量",
+        "供需：行业产能过剩，二三线厂开工率偏低【需复核】"
+      ],
+      "metrics": [
+        {
+          "name": "负极占电芯成本",
+          "value": "约8%–12%",
+          "caliber": "行业成本拆解",
+          "asOf": "2024",
+          "verify": true
+        }
+      ],
+      "children": [
+        "up-ane-graphite",
+        "up-ane-co"
+      ],
+      "related": [
+        "mid-bat-cell"
+      ],
+      "sources": [
+        "公司公告",
+        "行业研究"
+      ]
+    },
+    {
+      "id": "up-sep-ele",
+      "title": "隔膜与电解液",
+      "subtitle": "电池的“安全件”",
+      "level": 3,
+      "parentId": "up",
+      "segment": "up",
+      "type": "track",
+      "summary": "隔膜与电解液是电池的安全件，湿法涂覆与新型锂盐决定高端电芯的性能上限。",
+      "points": [
+        "隔膜：湿法（薄、一致性好）vs 干法（成本低、耐高压）；涂覆（陶瓷/芳纶/PVDF）决定安全",
+        "电解液：六氟磷酸锂（LiPF6）+ 溶剂 + 添加剂，添加剂配方是隐形壁垒",
+        "新型锂盐：LiFSI 提升低温与快充性能，成本仍高于六氟【需复核】",
+        "格局：隔膜设备依赖进口、集中度高；电解液一体化（天赐自供六氟）压低成本"
+      ],
+      "metrics": [
+        {
+          "name": "隔膜占电芯成本",
+          "value": "约5%–10%",
+          "caliber": "行业成本拆解",
+          "asOf": "2024",
+          "verify": true
+        },
+        {
+          "name": "电解液占电芯成本",
+          "value": "约8%–12%",
+          "caliber": "行业成本拆解",
+          "asOf": "2024",
+          "verify": true
+        }
+      ],
+      "children": [
+        "up-sep-ele-tech",
+        "up-sep-ele-co"
+      ],
+      "related": [
+        "mid-bat-struct"
+      ],
+      "sources": [
+        "公司公告",
+        "行业研究"
+      ]
+    },
+    {
+      "id": "up-foil",
+      "title": "铜铝箔与结构件",
+      "subtitle": "极薄化与CTP带来的变化",
+      "level": 3,
+      "parentId": "up",
+      "segment": "up",
+      "type": "track",
+      "summary": "铜箔极薄化直接降本，结构件则随 CTP/CTC 从“壳体”变成“结构承力件”。",
+      "points": [
+        "铜箔：6μm → 4.5μm 极薄化，减重同时降铜用量，但良率与设备要求提高",
+        "铝箔：正极集流体，涂碳铝箔改善导电与粘结",
+        "结构件：方形电芯壳体、顶盖；CTP/CTC 后要求更高强度与集成度",
+        "成本敏感：铜价与加工费双变量，加工费长期下行【需复核】"
+      ],
+      "metrics": [
+        {
+          "name": "铜箔主流厚度",
+          "value": "6μm为主，4.5μm在推广",
+          "caliber": "锂电铜箔",
+          "asOf": "2024",
+          "verify": true
+        }
+      ],
+      "children": [
+        "up-foil-tech",
+        "up-foil-co"
+      ],
+      "related": [
+        "mid-bat-struct"
+      ],
+      "sources": [
+        "公司公告",
+        "行业研究"
+      ]
+    },
+    {
+      "id": "mid-bat",
+      "title": "动力电池",
+      "subtitle": "整车成本最大的一块",
+      "level": 3,
+      "parentId": "mid",
+      "segment": "mid",
+      "type": "track",
+      "summary": "方形电芯占国内九成以上，真正的竞争不在形态，而在结构创新、材料体系与成本控制。",
+      "points": [
+        "三种形态：方形（国内主流，90%+）、圆柱（46系大圆柱）、软包（海外为主）",
+        "结构创新：CTP3.0麒麟、刀片电池、神行电池（铁锂4C）、CTB/CTC",
+        "关键指标：能量密度（铁锂180–200Wh/kg、三元250–300Wh/kg）、循环寿命、快充倍率、元/Wh成本【需复核】",
+        "成本结构：原材料占70%–80%，正极最贵；制造与折旧占其余",
+        "格局：宁德时代+比亚迪弗迪双龙头，中创新航、亿纬、国轩、蜂巢跟进；海外LG新能源、松下、SK On、三星SDI"
+      ],
+      "metrics": [
+        {
+          "name": "铁锂电芯价格",
+          "value": "约0.3–0.4元/Wh",
+          "caliber": "方形铁锂电芯，行业均价",
+          "asOf": "2025",
+          "verify": true
+        },
+        {
+          "name": "原材料占电池成本",
+          "value": "70%–80%",
+          "caliber": "行业成本拆解",
+          "asOf": "2024",
+          "verify": true
+        }
+      ],
+      "children": [
+        "mid-bat-cell",
+        "mid-bat-struct",
+        "mid-bat-catl",
+        "mid-bat-byd",
+        "mid-bat-data"
+      ],
+      "related": [
+        "up-cat",
+        "mid-bat-data",
+        "down-oem"
+      ],
+      "sources": [
+        "公司公告",
+        "中国汽车动力电池产业创新联盟",
+        "SNE Research"
+      ]
+    },
+    {
+      "id": "mid-edrive",
+      "title": "电机电控与功率半导体",
+      "subtitle": "从IGBT到SiC",
+      "level": 3,
+      "parentId": "mid",
+      "segment": "mid",
+      "type": "track",
+      "summary": "永磁同步电机是主流，800V平台把功率器件从IGBT推向SiC，单车价值量随之抬升。",
+      "points": [
+        "电机：永磁同步（效率高、体积小）为主流，交流异步用于性能车辅驱",
+        "电控：逆变器+控制算法，决定效率与响应；多合一电驱总成成为趋势",
+        "功率半导体：IGBT（400V主流）→ SiC MOSFET（800V，效率与耐压更优）",
+        "格局：整车自供（比亚迪、特斯拉）与第三方（汇川、博世、采埃孚）并存",
+        "成本：SiC 器件价格仍高于 IGBT，但系统层面可省电池与散热成本【需复核】"
+      ],
+      "metrics": [
+        {
+          "name": "电驱系统单车价值",
+          "value": "数千元至万元级",
+          "caliber": "三合一电驱总成",
+          "asOf": "2024",
+          "verify": true
+        }
+      ],
+      "children": [
+        "mid-edrive-tech",
+        "mid-edrive-co"
+      ],
+      "related": [
+        "mid-bat"
+      ],
+      "sources": [
+        "公司公告",
+        "行业研究"
+      ]
+    },
+    {
+      "id": "mid-thm",
+      "title": "热管理",
+      "subtitle": "冬季续航的胜负手",
+      "level": 3,
+      "parentId": "mid",
+      "segment": "mid",
+      "type": "track",
+      "summary": "热管理从“散热”变成“能量调度”，热泵与集成模块直接决定冬季续航表现。",
+      "points": [
+        "系统构成：电池冷却/加热、电驱冷却、座舱空调、集成式热管理模块",
+        "热泵空调：比PTC加热更省电，-10℃以下效率下降，需补辅热",
+        "集成化：多通阀+板换+泵阀集成，减少管路、降本、提升可靠性",
+        "价值量：新能源车热管理单车价值显著高于燃油车【需复核】"
+      ],
+      "metrics": [
+        {
+          "name": "热管理单车价值",
+          "value": "约2000–4000元",
+          "caliber": "新能源乘用车估算",
+          "asOf": "2024",
+          "verify": true
+        }
+      ],
+      "children": [
+        "mid-thm-tech",
+        "mid-thm-co"
+      ],
+      "related": [
+        "mid-bat"
+      ],
+      "sources": [
+        "公司公告",
+        "行业研究"
+      ]
+    },
+    {
+      "id": "mid-adas",
+      "title": "智能驾驶",
+      "subtitle": "纯视觉 vs 激光雷达融合",
+      "level": 3,
+      "parentId": "mid",
+      "segment": "mid",
+      "type": "track",
+      "summary": "中国主流走“摄像头+激光雷达+高算力芯片”的融合路线，硬件降价推动城市NOA下放到20万以内车型。",
+      "points": [
+        "两条路线：纯视觉（特斯拉、部分新势力）vs 多传感器融合（多数中国品牌）",
+        "感知硬件：摄像头、毫米波雷达、超声波雷达、激光雷达（半固态为主）",
+        "算力：英伟达Orin/Thor、地平线征程5/6、黑芝麻华山、华为自研",
+        "功能分级：高速NOA已普及，城市NOA在头部品牌规模推送",
+        "成本趋势：激光雷达单价从数万元降至千元级，智驾硬件成本快速下探【需复核】"
+      ],
+      "metrics": [
+        {
+          "name": "城市NOA硬件成本",
+          "value": "数千元至万元级",
+          "caliber": "含芯片+传感器套件",
+          "asOf": "2025",
+          "verify": true
+        }
+      ],
+      "children": [
+        "mid-adas-tech",
+        "mid-adas-co"
+      ],
+      "related": [
+        "mid-cockpit",
+        "down-oem-hw"
+      ],
+      "sources": [
+        "公司公告",
+        "行业研究",
+        "招股书"
+      ]
+    },
+    {
+      "id": "mid-cockpit",
+      "title": "智能座舱",
+      "subtitle": "芯片决定体验上限",
+      "level": 3,
+      "parentId": "mid",
+      "segment": "mid",
+      "type": "track",
+      "summary": "座舱体验由芯片算力、屏幕数量与语音交互共同决定，高通在座舱芯片上占据主导。",
+      "points": [
+        "芯片：高通8155（上一代主流）、8295（新一代），国产替代（芯驰、地平线）在推进",
+        "形态：多屏/联屏、HUD、电子外后视镜、语音大模型上车",
+        "域控：座舱域与智驾域逐步融合为中央计算平台",
+        "成本：座舱域控单车价值数千元级，是自主品牌差异化重点【需复核】"
+      ],
+      "metrics": [
+        {
+          "name": "座舱域控单车价值",
+          "value": "约1000–3000元",
+          "caliber": "中高端车型估算",
+          "asOf": "2024",
+          "verify": true
+        }
+      ],
+      "children": [
+        "mid-cockpit-chip",
+        "mid-cockpit-co"
+      ],
+      "related": [
+        "mid-adas"
+      ],
+      "sources": [
+        "公司公告",
+        "行业研究"
+      ]
+    },
+    {
+      "id": "mid-cast",
+      "title": "一体化压铸",
+      "subtitle": "用大压铸机换零件数量",
+      "level": 3,
+      "parentId": "mid",
+      "segment": "mid",
+      "type": "track",
+      "summary": "用6000–9000吨压铸机把几十个零件合成一件，省工装、省焊点，但维修成本与良率是代价。",
+      "points": [
+        "工艺：超大吨位压铸机 + 免热处理铝合金，后地板/前舱一体成型",
+        "收益：零件数量大幅减少、焊点减少、生产节拍提升",
+        "代价：碰撞后维修成本高、模具投入大、良率爬坡难",
+        "玩家：特斯拉率先量产，国内文灿、广东鸿图、拓普跟进；设备端力劲科技"
+      ],
+      "metrics": [
+        {
+          "name": "主流压铸机吨位",
+          "value": "6000–9000吨",
+          "caliber": "一体化压铸",
+          "asOf": "2024",
+          "verify": true
+        }
+      ],
+      "children": [
+        "mid-cast-tech",
+        "mid-cast-co"
+      ],
+      "related": [
+        "down-oem-byd"
+      ],
+      "sources": [
+        "公司公告",
+        "行业研究"
+      ]
+    },
+    {
+      "id": "down-oem",
+      "title": "整车格局",
+      "subtitle": "谁在卖车，卖到哪",
+      "level": 3,
+      "parentId": "down",
+      "segment": "down",
+      "type": "track",
+      "summary": "比亚迪与特斯拉领跑，传统车企转型与新势力、华为系分食中高端，价格战贯穿2023–2025年。",
+      "points": [
+        "头部：比亚迪（垂直一体化+规模）、特斯拉（成本与软件）",
+        "传统转型：吉利、长安、奇瑞、上汽、广汽埃安，出口贡献增量",
+        "新势力：理想（增程+家庭）、蔚来（换电+服务）、小鹏（智驾）、零跑（性价比）、小米（生态引流）",
+        "华为系：问界/智界/享界/尊界，输出ADS智驾与鸿蒙座舱",
+        "价格带：10万以下（代步）、10–20万（主战场）、20–30万（智驾竞争）、30万以上（豪华与旗舰）"
+      ],
+      "metrics": [
+        {
+          "name": "比亚迪年销量",
+          "value": "400万辆级",
+          "caliber": "含出口，公司公告",
+          "asOf": "2024",
+          "verify": true
+        },
+        {
+          "name": "新能源乘用车零售渗透率",
+          "value": "约45%–50%",
+          "caliber": "乘联会零售口径",
+          "asOf": "2024",
+          "verify": true
+        }
+      ],
+      "children": [
+        "down-oem-byd",
+        "down-oem-nf",
+        "down-oem-hw",
+        "down-oem-sales"
+      ],
+      "related": [
+        "down-route",
+        "mid-adas"
+      ],
+      "sources": [
+        "乘联会",
+        "公司公告"
+      ]
+    },
+    {
+      "id": "down-route",
+      "title": "技术路线之争",
+      "subtitle": "纯电 / 插混 / 增程",
+      "level": 3,
+      "parentId": "down",
+      "segment": "down",
+      "type": "track",
+      "summary": "三条路线不是替代关系，而是不同补能条件下的最优解；2023年后插混与增程份额明显上升。",
+      "points": [
+        "纯电BEV：结构简单、使用成本低、智能化上限高，依赖补能基建",
+        "插混PHEV：可油可电、无里程焦虑，结构复杂、亏电油耗是短板",
+        "增程EREV：大电池+小增程器，体验接近纯电，高速能耗偏高",
+        "政策差异：部分地区对增程/插混的上牌与补贴政策不同，需按城市核对【需复核】",
+        "趋势：纯电份额被稀释，插混+增程合计份额上升【需复核】"
+      ],
+      "metrics": [
+        {
+          "name": "插混+增程份额",
+          "value": "约三到四成",
+          "caliber": "新能源乘用车批发结构",
+          "asOf": "2024",
+          "verify": true
+        }
+      ],
+      "children": [
+        "down-route-cmp",
+        "down-route-erev"
+      ],
+      "related": [
+        "down-oem-byd",
+        "down-oem-nf"
+      ],
+      "sources": [
+        "乘联会",
+        "公司公告"
+      ]
+    },
+    {
+      "id": "down-chg",
+      "title": "充电与换电",
+      "subtitle": "补能决定使用体验",
+      "level": 3,
+      "parentId": "down",
+      "segment": "down",
+      "type": "track",
+      "summary": "公共桩已达百万台量级，超充（800V+4C）与换电并行推进，车桩比口径差异极大，必须写清是公共桩还是含私桩。",
+      "points": [
+        "充电：公共桩 + 私桩；直流快充占比提升，高速服务区是短板",
+        "超充：800V高压平台 + 4C/5C电芯 + 液冷枪线，单枪功率可达480kW级",
+        "换电：蔚来（乘用车，座站千座级）、奥动（营运车）；单站投资与日换电次数决定盈亏",
+        "运营商：特来电、星星充电、国家电网、云快充、小桔充电",
+        "口径陷阱：车桩比 2:1–3:1 的差异多来自是否含私桩，引用时必须说明"
+      ],
+      "metrics": [
+        {
+          "name": "公共充电桩保有量",
+          "value": "百万台量级",
+          "caliber": "中国充电联盟，仅公共桩",
+          "asOf": "2024",
+          "verify": true
+        },
+        {
+          "name": "蔚来换电站",
+          "value": "千座级",
+          "caliber": "公司公告",
+          "asOf": "2025",
+          "verify": true
+        }
+      ],
+      "children": [
+        "down-chg-tech",
+        "down-chg-data"
+      ],
+      "related": [
+        "mid-bat-struct"
+      ],
+      "sources": [
+        "中国充电联盟",
+        "公司公告"
+      ]
+    },
+    {
+      "id": "down-rec",
+      "title": "电池回收",
+      "subtitle": "城市矿山与闭环",
+      "level": 3,
+      "parentId": "down",
+      "segment": "down",
+      "type": "track",
+      "summary": "湿法回收镍钴锂回收率可达95%以上，既是环保要求，也是资源端的价格对冲。",
+      "points": [
+        "两条工艺：湿法（回收率高、投资大）vs 火法（简单、能耗高、回收率低）",
+        "梯次利用：容量衰减到70%–80%的电池用于储能、低速车、备电",
+        "主体：邦普循环（宁德时代系）、格林美、华友循环、天奇股份；白名单管理",
+        "挑战：非正规渠道回收仍占相当比例，正规企业“吃不饱”【需复核】",
+        "价值：回收锂镍钴可部分对冲资源价格波动"
+      ],
+      "metrics": [
+        {
+          "name": "镍钴锰回收率",
+          "value": "95%以上",
+          "caliber": "湿法工艺，行业先进水平",
+          "asOf": "2024",
+          "verify": true
+        },
+        {
+          "name": "锂回收率",
+          "value": "约85%–90%",
+          "caliber": "湿法工艺",
+          "asOf": "2024",
+          "verify": true
+        }
+      ],
+      "children": [
+        "down-rec-tech",
+        "down-rec-data"
+      ],
+      "related": [
+        "up-li",
+        "down-oem"
+      ],
+      "sources": [
+        "工信部白名单",
+        "公司公告"
+      ]
+    },
+    {
+      "id": "up-li-sl",
+      "title": "盐湖提锂",
+      "subtitle": "吸附法+膜法在青海跑通",
+      "level": 4,
+      "parentId": "up-li",
+      "segment": "up",
+      "type": "tech",
+      "summary": "盐湖提锂现金成本处全球最低一档，但受海拔、淡水、环保与建设周期约束，扩产速度慢。",
+      "points": [
+        "主流工艺：吸附法（铝系/钛系吸附剂）+ 膜法（纳滤、反渗透）+ 蒸发结晶",
+        "国内基地：青海察尔汗、一里坪、东台吉乃尔；西藏扎布耶（高海拔，太阳池）",
+        "优势：成本低、无采矿；短板：镁锂比高、提锂周期长、淡水与生态约束",
+        "海外对标：智利Atacama（SQM、Albemarle）、阿根廷盐湖（赣锋Cauchari-Olaroz）"
+      ],
+      "metrics": [
+        {
+          "name": "盐湖提锂现金成本",
+          "value": "约3–5万元/吨LCE",
+          "caliber": "行业估算，先进产能",
+          "asOf": "2024–2025",
+          "verify": true
+        },
+        {
+          "name": "建设周期",
+          "value": "约2–4年",
+          "caliber": "盐湖项目",
+          "asOf": "2024",
+          "verify": true
+        }
+      ],
+      "children": [],
+      "related": [
+        "up-li-co",
+        "up-li-price"
+      ],
+      "sources": [
+        "公司公告",
+        "行业研究"
+      ]
+    },
+    {
+      "id": "up-li-price",
+      "title": "碳酸锂价格周期",
+      "subtitle": "60万 → 7–10万",
+      "level": 4,
+      "parentId": "up-li",
+      "segment": "up",
+      "type": "metric",
+      "summary": "碳酸锂从2022年11月约60万元/吨跌到2025年7–10万元/吨，是全链条毛利重分配的起点。",
+      "points": [
+        "口径：SMM电池级碳酸锂现货均价，单位万元/吨；广期所期货波动更剧烈",
+        "2021–2022上行：需求爆发 + 矿山扩产滞后 + 囤货",
+        "2023–2025下行：盐湖与非洲矿放量 + 库存去化 + 需求增速放缓",
+        "传导路径：锂价→正极→电芯→整车，通常滞后1–2个季度",
+        "观察指标：库存天数、澳矿拍卖价、盐湖季节性产量、正极厂排产"
+      ],
+      "metrics": [
+        {
+          "name": "碳酸锂现货均价",
+          "value": "7–10万元/吨",
+          "caliber": "SMM电池级碳酸锂",
+          "asOf": "2025",
+          "verify": true
+        },
+        {
+          "name": "历史峰值",
+          "value": "约60万元/吨",
+          "caliber": "2022年11月，SMM",
+          "asOf": "2022-11",
+          "verify": true
+        }
+      ],
+      "children": [],
+      "related": [
+        "up-li-sl",
+        "up-cat-lfp",
+        "mid-bat-data"
+      ],
+      "sources": [
+        "SMM",
+        "广期所",
+        "行业研究"
+      ]
+    },
+    {
+      "id": "up-li-co",
+      "title": "锂资源主要企业",
+      "subtitle": "赣锋 / 天齐 / 盐湖股份",
+      "level": 4,
+      "parentId": "up-li",
+      "segment": "up",
+      "type": "company",
+      "summary": "赣锋走全球资源+电池一体化，天齐靠Greenbushes低成本矿，盐湖股份吃钾肥+锂双主业。",
+      "points": [
+        "赣锋锂业：资源（澳洲、阿根廷、非洲）+ 锂盐 + 电池，一体化程度最高",
+        "天齐锂业：Greenbushes权益矿 + SQM股权，成本曲线最左端",
+        "盐湖股份：察尔汗盐湖，钾肥现金流 + 碳酸锂产能，成本优势明显",
+        "永兴材料（云母）、中矿资源（非洲矿）是弹性更大的二线标的【需复核】"
+      ],
+      "metrics": [
+        {
+          "name": "锂盐产能",
+          "value": "头部企业数十万吨LCE级",
+          "caliber": "公司公告，含在建",
+          "asOf": "2025",
+          "verify": true
+        }
+      ],
+      "children": [],
+      "related": [
+        "up-li-sl",
+        "up-li-price"
+      ],
+      "sources": [
+        "公司年报",
+        "公司公告"
+      ]
+    },
+    {
+      "id": "up-cat-lfp",
+      "title": "磷酸铁锂正极",
+      "subtitle": "成本与安全换来的主流",
+      "level": 4,
+      "parentId": "up-cat",
+      "segment": "up",
+      "type": "tech",
+      "summary": "磷酸铁锂靠成本和安全拿下国内约七成装机，短板靠高压实密度与4C快充补齐。",
+      "points": [
+        "工艺：固相法（主流）/液相法（德方纳米），前驱体为磷酸铁",
+        "性能：能量密度低于三元，但循环寿命长、热稳定性好、无钴无镍",
+        "迭代：高压实密度（2.6g/cm³以上）、快充型、低温改善【需复核】",
+        "成本：原料为磷酸铁 + 碳酸锂，对锂价高度敏感"
+      ],
+      "metrics": [
+        {
+          "name": "铁锂装机占比",
+          "value": "约70%左右",
+          "caliber": "国内动力电池分材料体系",
+          "asOf": "2024",
+          "verify": true
+        },
+        {
+          "name": "压实密度",
+          "value": "2.4–2.6g/cm³",
+          "caliber": "量产水平",
+          "asOf": "2024",
+          "verify": true
+        }
+      ],
+      "children": [],
+      "related": [
+        "up-cat-ncm",
+        "up-cat-co"
+      ],
+      "sources": [
+        "公司公告",
+        "行业研究"
+      ]
+    },
+    {
+      "id": "up-cat-ncm",
+      "title": "三元与镍钴前驱体",
+      "subtitle": "高镍的高端路线",
+      "level": 4,
+      "parentId": "up-cat",
+      "segment": "up",
+      "type": "tech",
+      "summary": "三元走高端长续航路线，镍钴成本与供应（尤其印尼镍）决定它的天花板。",
+      "points": [
+        "结构：NCM523/622/811、NCA；镍越高能量密度越高、热稳定性越差",
+        "前驱体：中伟股份、格林美；镍资源看印尼MHP与高冰镍",
+        "成本：钴价波动 + 镍价周期，三元成本高于铁锂",
+        "应用：高端长续航车型、部分海外车型；国内份额被铁锂挤压【需复核】"
+      ],
+      "metrics": [
+        {
+          "name": "三元装机占比",
+          "value": "约三成",
+          "caliber": "国内动力电池分材料体系",
+          "asOf": "2024",
+          "verify": true
+        },
+        {
+          "name": "高镍系别",
+          "value": "8系/9系为主流方向",
+          "caliber": "NCM",
+          "asOf": "2024",
+          "verify": true
+        }
+      ],
+      "children": [],
+      "related": [
+        "up-cat-lfp",
+        "up-li"
+      ],
+      "sources": [
+        "公司公告",
+        "行业研究"
+      ]
+    },
+    {
+      "id": "up-cat-co",
+      "title": "正极主要企业",
+      "subtitle": "湖南裕能 / 容百科技",
+      "level": 4,
+      "parentId": "up-cat",
+      "segment": "up",
+      "type": "company",
+      "summary": "湖南裕能是铁锂正极出货龙头，容百科技主打高镍三元，巴莫科技服务海外客户。",
+      "points": [
+        "湖南裕能：铁锂正极出货第一梯队，客户含宁德时代、比亚迪",
+        "德方纳米：液相法铁锂 + 锰铁锂布局",
+        "容百科技/当升科技：高镍三元，海外客户占比高",
+        "巴莫科技：三元 + 海外基地（印尼/韩国）【需复核】"
+      ],
+      "metrics": [
+        {
+          "name": "铁锂正极出货",
+          "value": "头部企业年出货数十万吨级",
+          "caliber": "公司公告",
+          "asOf": "2024",
+          "verify": true
+        }
+      ],
+      "children": [],
+      "related": [
+        "up-cat-lfp",
+        "mid-bat-catl"
+      ],
+      "sources": [
+        "公司公告",
+        "公司年报"
+      ]
+    },
+    {
+      "id": "up-ane-graphite",
+      "title": "人造石墨与石墨化",
+      "subtitle": "成本与能耗的核心环节",
+      "level": 4,
+      "parentId": "up-ane",
+      "segment": "up",
+      "type": "tech",
+      "summary": "石墨化是人造石墨的成本与能耗核心，自供石墨化等于自建电价优势。",
+      "points": [
+        "工艺：焦类原料→粉碎→造粒→石墨化（2800–3200℃）→包覆→筛分",
+        "石墨化成本：电价敏感，产能集中在内蒙古、四川、云南等低电价区",
+        "快充改性：二次造粒、碳包覆、表面处理",
+        "硅碳：掺硅提升容量，膨胀问题靠预锂化与粘结剂解决"
+      ],
+      "metrics": [
+        {
+          "name": "石墨化成本",
+          "value": "约0.6–1.0万元/吨",
+          "caliber": "行业估算区间",
+          "asOf": "2024",
+          "verify": true
+        }
+      ],
+      "children": [],
+      "related": [
+        "up-ane-co",
+        "mid-bat-cell"
+      ],
+      "sources": [
+        "公司公告",
+        "行业研究"
+      ]
+    },
+    {
+      "id": "up-ane-co",
+      "title": "负极主要企业",
+      "subtitle": "璞泰来 / 贝特瑞",
+      "level": 4,
+      "parentId": "up-ane",
+      "segment": "up",
+      "type": "company",
+      "summary": "璞泰来负极+涂覆隔膜+设备一体化，贝特瑞负极与硅基领先，杉杉股份偏人造石墨。",
+      "points": [
+        "璞泰来：负极 + 石墨化 + 涂覆隔膜 + 锂电设备，一体化",
+        "贝特瑞：负极出货全球前列，硅基负极技术领先",
+        "杉杉股份：人造石墨 + 偏光片双主业",
+        "尚太科技/中科电气：一体化与成本控制型玩家"
+      ],
+      "metrics": [
+        {
+          "name": "负极出货",
+          "value": "头部企业年出货数十万吨级",
+          "caliber": "公司公告",
+          "asOf": "2024",
+          "verify": true
+        }
+      ],
+      "children": [],
+      "related": [
+        "up-ane-graphite"
+      ],
+      "sources": [
+        "公司公告",
+        "公司年报"
+      ]
+    },
+    {
+      "id": "up-sep-ele-tech",
+      "title": "湿法隔膜与新型锂盐",
+      "subtitle": "涂覆与LiFSI决定上限",
+      "level": 4,
+      "parentId": "up-sep-ele",
+      "segment": "up",
+      "type": "tech",
+      "summary": "湿法隔膜更薄更均匀，涂覆工艺决定安全；LiFSI提升快充与低温，但成本仍高。",
+      "points": [
+        "隔膜：湿法（薄、孔径均匀）vs 干法（成本低、耐高压）；涂覆陶瓷/芳纶/PVDF提升耐热",
+        "电解液配方：溶剂（EC/DMC/EMC）+ 添加剂（VC/FEC）+ 锂盐",
+        "LiFSI：提升低温与快充、抑制产气，添加比例逐步提升【需复核】",
+        "壁垒：隔膜设备（日本进口）与涂覆配方，认证周期长"
+      ],
+      "metrics": [
+        {
+          "name": "湿法隔膜厚度",
+          "value": "5–9μm基膜",
+          "caliber": "量产水平",
+          "asOf": "2024",
+          "verify": true
+        }
+      ],
+      "children": [],
+      "related": [
+        "up-sep-ele-co",
+        "mid-bat-struct"
+      ],
+      "sources": [
+        "公司公告",
+        "行业研究"
+      ]
+    },
+    {
+      "id": "up-sep-ele-co",
+      "title": "隔膜与电解液企业",
+      "subtitle": "恩捷股份 / 天赐材料",
+      "level": 4,
+      "parentId": "up-sep-ele",
+      "segment": "up",
+      "type": "company",
+      "summary": "恩捷股份是湿法隔膜龙头，天赐材料靠六氟自供做电解液一体化。",
+      "points": [
+        "恩捷股份：湿法隔膜全球份额领先，客户覆盖主流电池厂",
+        "星源材质：干法+湿法双线，海外客户占比提升",
+        "天赐材料：电解液 + 六氟磷酸锂自供，一体化成本优势",
+        "新宙邦：电解液+氟化工，海外布局较早"
+      ],
+      "metrics": [
+        {
+          "name": "隔膜全球份额",
+          "value": "头部企业三成以上",
+          "caliber": "行业估算",
+          "asOf": "2024",
+          "verify": true
+        }
+      ],
+      "children": [],
+      "related": [
+        "up-sep-ele-tech"
+      ],
+      "sources": [
+        "公司公告",
+        "行业研究"
+      ]
+    },
+    {
+      "id": "up-foil-tech",
+      "title": "极薄铜箔与结构件工艺",
+      "subtitle": "减重与降本同步",
+      "level": 4,
+      "parentId": "up-foil",
+      "segment": "up",
+      "type": "tech",
+      "summary": "铜箔从6μm向4.5μm推进，单位面积用铜量下降；结构件从壳体变成承力件。",
+      "points": [
+        "极薄化：6μm→4.5μm，减重并降低铜用量，但断带与良率风险上升",
+        "复合铜箔：PET/PP基材+镀铜，理论降本，产业化进度慢【需复核】",
+        "结构件：方形壳体+顶盖，CTP/CTC要求更高强度与密封性",
+        "加工费：铜箔加工费长期下行，成本控制决定盈利"
+      ],
+      "metrics": [
+        {
+          "name": "铜箔主流厚度",
+          "value": "6μm；4.5μm推广中",
+          "caliber": "锂电铜箔",
+          "asOf": "2024",
+          "verify": true
+        }
+      ],
+      "children": [],
+      "related": [
+        "up-foil-co",
+        "mid-bat-struct"
+      ],
+      "sources": [
+        "公司公告",
+        "行业研究"
+      ]
+    },
+    {
+      "id": "up-foil-co",
+      "title": "铜铝箔与结构件企业",
+      "subtitle": "诺德股份 / 科达利",
+      "level": 4,
+      "parentId": "up-foil",
+      "segment": "up",
+      "type": "company",
+      "summary": "诺德股份与嘉元科技主攻锂电铜箔，科达利是结构件全球龙头。",
+      "points": [
+        "诺德股份：锂电铜箔老牌厂商，极薄化推进较早",
+        "嘉元科技：铜箔双线布局，客户结构以头部电池厂为主",
+        "鼎胜新材：锂电铝箔龙头",
+        "科达利：电池结构件全球份额领先，随CTP/CTC升级产品"
+      ],
+      "metrics": [
+        {
+          "name": "结构件全球份额",
+          "value": "头部企业三成左右",
+          "caliber": "行业估算",
+          "asOf": "2024",
+          "verify": true
+        }
+      ],
+      "children": [],
+      "related": [
+        "up-foil-tech",
+        "mid-bat-catl"
+      ],
+      "sources": [
+        "公司公告",
+        "行业研究"
+      ]
+    },
+    {
+      "id": "mid-bat-cell",
+      "title": "电芯形态",
+      "subtitle": "方形 / 圆柱 / 软包",
+      "level": 4,
+      "parentId": "mid-bat",
+      "segment": "mid",
+      "type": "tech",
+      "summary": "国内九成以上用方形电芯，圆柱靠46系大圆柱重返主流视野，软包主要服务海外客户。",
+      "points": [
+        "方形：卷绕/叠片，结构强度好、成组效率高，国内主流",
+        "圆柱：21700→4680/46系，标准化程度高、成本潜力大，特斯拉主推",
+        "软包：叠片+铝塑膜，能量密度高但成组效率与成本劣势",
+        "趋势：叠片工艺占比提升，大圆柱在高端与储能同步推进"
+      ],
+      "metrics": [
+        {
+          "name": "方形电芯占比",
+          "value": "约90%以上",
+          "caliber": "国内装机",
+          "asOf": "2024",
+          "verify": true
+        },
+        {
+          "name": "大圆柱规格",
+          "value": "46系（直径46mm）",
+          "caliber": "特斯拉等",
+          "asOf": "2024",
+          "verify": true
+        }
+      ],
+      "children": [],
+      "related": [
+        "mid-bat-struct",
+        "up-ane-graphite"
+      ],
+      "sources": [
+        "公司公告",
+        "行业研究"
+      ]
+    },
+    {
+      "id": "mid-bat-struct",
+      "title": "CTP / 刀片 / 神行",
+      "subtitle": "用结构换空间和成本",
+      "level": 4,
+      "parentId": "mid-bat",
+      "segment": "mid",
+      "type": "tech",
+      "summary": "不做材料突破也能提性能：去掉模组、把电芯做成结构件，体积利用率可提到七成以上。",
+      "points": [
+        "CTP（Cell to Pack）：跳过模组，电芯直接成包，麒麟电池体积利用率约72%【需复核】",
+        "刀片电池：长条形电芯直接做结构件，针刺不起火是传播点",
+        "CTB/CTC：电池与车身/底盘一体化，进一步省空间与零件",
+        "神行电池：铁锂做到4C快充，把快充从三元下放到铁锂",
+        "代价：维修性下降、热管理难度上升、对BMS要求更高"
+      ],
+      "metrics": [
+        {
+          "name": "麒麟电池体积利用率",
+          "value": "约72%",
+          "caliber": "宁德时代发布口径",
+          "asOf": "2023",
+          "verify": true
+        },
+        {
+          "name": "神行电池快充",
+          "value": "4C级",
+          "caliber": "宁德时代发布口径",
+          "asOf": "2024",
+          "verify": true
+        }
+      ],
+      "children": [],
+      "related": [
+        "mid-bat-catl",
+        "mid-bat-byd"
+      ],
+      "sources": [
+        "公司发布会",
+        "公司公告"
+      ]
+    },
+    {
+      "id": "mid-bat-catl",
+      "title": "宁德时代",
+      "subtitle": "全球装机第一",
+      "level": 4,
+      "parentId": "mid-bat",
+      "segment": "mid",
+      "type": "company",
+      "summary": "全球动力电池装机份额约三成半，靠麒麟/神行等产品迭代与海外建厂维持领先。",
+      "points": [
+        "产品线：麒麟电池（三元高能量密度）、神行电池（铁锂快充）、钠离子、储能电芯",
+        "客户结构：覆盖特斯拉、理想、蔚来、吉利、宝马、奔驰等主流车企",
+        "海外产能：匈牙利、西班牙（与Stellantis合资）、印尼产业链项目",
+        "护城河：规模采购成本、材料体系研发、客户认证周期长",
+        "风险：价格战压缩毛利、海外政策与关税、客户自供比例提升"
+      ],
+      "metrics": [
+        {
+          "name": "全球装机份额",
+          "value": "约35%–38%",
+          "caliber": "SNE Research全球装机量",
+          "asOf": "2024",
+          "verify": true
+        },
+        {
+          "name": "国内装机份额",
+          "value": "约四成",
+          "caliber": "中国汽车动力电池产业创新联盟",
+          "asOf": "2024",
+          "verify": true
+        }
+      ],
+      "children": [],
+      "related": [
+        "mid-bat-byd",
+        "mid-bat-data",
+        "mid-bat-struct"
+      ],
+      "sources": [
+        "公司年报",
+        "SNE Research",
+        "中国汽车动力电池产业创新联盟"
+      ]
+    },
+    {
+      "id": "mid-bat-byd",
+      "title": "比亚迪弗迪电池",
+      "subtitle": "自供为主，刀片起家",
+      "level": 4,
+      "parentId": "mid-bat",
+      "segment": "mid",
+      "type": "company",
+      "summary": "弗迪电池以刀片电池为核心，优先供应比亚迪自身，外供比例是最大看点。",
+      "points": [
+        "技术：刀片电池（铁锂长条电芯）+ CTB车身一体化",
+        "模式：垂直一体化，电池自供为主，外供客户逐步拓展",
+        "成本：自研自产+规模，整车成本控制能力强",
+        "看点：外供比例提升、储能业务、海外工厂（泰国、巴西、匈牙利）"
+      ],
+      "metrics": [
+        {
+          "name": "国内装机份额",
+          "value": "约二成",
+          "caliber": "中国汽车动力电池产业创新联盟",
+          "asOf": "2024",
+          "verify": true
+        }
+      ],
+      "children": [],
+      "related": [
+        "mid-bat-catl",
+        "down-oem-byd",
+        "mid-bat-struct"
+      ],
+      "sources": [
+        "公司公告",
+        "中国汽车动力电池产业创新联盟"
+      ]
+    },
+    {
+      "id": "mid-bat-data",
+      "title": "装机量与产能利用率",
+      "subtitle": "过剩有多严重",
+      "level": 4,
+      "parentId": "mid-bat",
+      "segment": "mid",
+      "type": "metric",
+      "summary": "行业名义产能远超需求，龙头满产、二三线厂开工率偏低，价格战由此而来。",
+      "points": [
+        "口径：国内装机用中国汽车动力电池产业创新联盟，全球份额用SNE Research，两者不可混用",
+        "规模：中国装机数百GWh级，全球千GWh级【需复核】",
+        "产能：行业名义产能显著高于装机，结构性过剩",
+        "利用率：头部80%以上，二三线厂50%–60%甚至更低【需复核】",
+        "价格：铁锂电芯约0.3–0.4元/Wh，逼近部分厂商成本线【需复核】"
+      ],
+      "metrics": [
+        {
+          "name": "中国装机量",
+          "value": "500–550GWh",
+          "caliber": "中国汽车动力电池产业创新联盟",
+          "asOf": "2024",
+          "verify": true
+        },
+        {
+          "name": "铁锂电芯价格",
+          "value": "0.3–0.4元/Wh",
+          "caliber": "方形铁锂，行业均价",
+          "asOf": "2025",
+          "verify": true
+        }
+      ],
+      "children": [],
+      "related": [
+        "mid-bat-catl",
+        "up-cat-lfp",
+        "up-li-price"
+      ],
+      "sources": [
+        "中国汽车动力电池产业创新联盟",
+        "SNE Research",
+        "SMM"
+      ]
+    },
+    {
+      "id": "mid-edrive-tech",
+      "title": "永磁同步与SiC电控",
+      "subtitle": "800V平台的关键",
+      "level": 4,
+      "parentId": "mid-edrive",
+      "segment": "mid",
+      "type": "tech",
+      "summary": "永磁同步电机是效率主流，800V平台把逆变器从IGBT推向SiC，系统效率与充电速度同时提升。",
+      "points": [
+        "电机：永磁同步（高效率、高功率密度）为主，交流异步用于性能车辅驱",
+        "电控：逆变器+控制算法；多合一电驱（电机+电控+减速器）降本减重",
+        "SiC：耐高压、开关损耗低，适合800V；成本高于IGBT约数倍【需复核】",
+        "趋势：油冷电机、扁线绕组、碳化硅模块国产化"
+      ],
+      "metrics": [
+        {
+          "name": "800V平台充电功率",
+          "value": "200–480kW级",
+          "caliber": "车型发布口径",
+          "asOf": "2025",
+          "verify": true
+        }
+      ],
+      "children": [],
+      "related": [
+        "mid-edrive-co",
+        "down-chg-tech"
+      ],
+      "sources": [
+        "公司公告",
+        "行业研究"
+      ]
+    },
+    {
+      "id": "mid-edrive-co",
+      "title": "电机电控企业",
+      "subtitle": "汇川技术 / 斯达半导",
+      "level": 4,
+      "parentId": "mid-edrive",
+      "segment": "mid",
+      "type": "company",
+      "summary": "汇川技术是第三方电驱龙头，斯达半导与时代电气主攻IGBT/SiC模块。",
+      "points": [
+        "汇川技术：电驱总成+电机+电控，第三方份额领先",
+        "方正电机/精进电动：电机与电驱配套",
+        "斯达半导/时代电气：IGBT与SiC模块，国产替代主力",
+        "博世/采埃孚：外资电驱总成，服务合资与海外车企"
+      ],
+      "metrics": [
+        {
+          "name": "第三方电驱份额",
+          "value": "汇川居前",
+          "caliber": "行业估算",
+          "asOf": "2024",
+          "verify": true
+        }
+      ],
+      "children": [],
+      "related": [
+        "mid-edrive-tech",
+        "down-oem-byd"
+      ],
+      "sources": [
+        "公司公告",
+        "行业研究"
+      ]
+    },
+    {
+      "id": "mid-thm-tech",
+      "title": "热泵与集成热管理",
+      "subtitle": "冬季续航的关键",
+      "level": 4,
+      "parentId": "mid-thm",
+      "segment": "mid",
+      "type": "tech",
+      "summary": "热泵把“制热”从耗电变成搬运热量，集成模块用多通阀统一调度电池、电驱与座舱回路。",
+      "points": [
+        "热泵：COP高于PTC，-10℃以下能力衰减，需辅热补足",
+        "集成模块：多通阀+板式换热器+电子水泵集成，减少管路与装配",
+        "电池热管理：液冷板、直冷（制冷剂直接冷却）方案",
+        "趋势：热管理域控、整车热源回收（电机余热）"
+      ],
+      "metrics": [
+        {
+          "name": "热泵冬季续航改善",
+          "value": "约10%–20%",
+          "caliber": "车型实测区间",
+          "asOf": "2024",
+          "verify": true
+        }
+      ],
+      "children": [],
+      "related": [
+        "mid-thm-co"
+      ],
+      "sources": [
+        "公司公告",
+        "行业研究"
+      ]
+    },
+    {
+      "id": "mid-thm-co",
+      "title": "热管理企业",
+      "subtitle": "三花智控 / 银轮股份",
+      "level": 4,
+      "parentId": "mid-thm",
+      "segment": "mid",
+      "type": "company",
+      "summary": "三花智控强在阀件与集成模块，银轮股份强在换热器与热管理总成。",
+      "points": [
+        "三花智控：电子膨胀阀、多通阀等核心阀件，集成模块供应商",
+        "银轮股份：换热器与热管理模块，商用车与乘用车双线",
+        "奥特佳：空调压缩机与热管理",
+        "格局：国产替代明显，单车价值随集成化提升"
+      ],
+      "metrics": [
+        {
+          "name": "热管理单车价值",
+          "value": "约2000–4000元",
+          "caliber": "新能源乘用车",
+          "asOf": "2024",
+          "verify": true
+        }
+      ],
+      "children": [],
+      "related": [
+        "mid-thm-tech"
+      ],
+      "sources": [
+        "公司公告",
+        "行业研究"
+      ]
+    },
+    {
+      "id": "mid-adas-tech",
+      "title": "感知路线与激光雷达",
+      "subtitle": "纯视觉 vs 融合",
+      "level": 4,
+      "parentId": "mid-adas",
+      "segment": "mid",
+      "type": "tech",
+      "summary": "纯视觉靠数据与算力，融合路线靠激光雷达补足暗光与异形障碍物，成本下降让融合方案下放到20万以内。",
+      "points": [
+        "纯视觉：特斯拉FSD路线，依赖海量数据与端到端模型",
+        "融合：摄像头+毫米波+激光雷达，中国品牌主流选择",
+        "激光雷达：半固态/MEMS为主，单价从数万元降至千元级【需复核】",
+        "芯片：Orin（254TOPS级）、Thor、征程6、华为自研",
+        "趋势：端到端大模型、无图城市NOA、硬件预埋+软件订阅"
+      ],
+      "metrics": [
+        {
+          "name": "激光雷达单价",
+          "value": "千元级",
+          "caliber": "车载半固态，量产价",
+          "asOf": "2025",
+          "verify": true
+        },
+        {
+          "name": "主流智驾算力",
+          "value": "200–500TOPS",
+          "caliber": "单车域控",
+          "asOf": "2025",
+          "verify": true
+        }
+      ],
+      "children": [],
+      "related": [
+        "mid-adas-co",
+        "down-oem-hw"
+      ],
+      "sources": [
+        "公司公告",
+        "招股书",
+        "行业研究"
+      ]
+    },
+    {
+      "id": "mid-adas-co",
+      "title": "智驾方案商与芯片",
+      "subtitle": "华为 / 地平线 / 禾赛",
+      "level": 4,
+      "parentId": "mid-adas",
+      "segment": "mid",
+      "type": "company",
+      "summary": "华为ADS是全栈方案代表，地平线做芯片底座，禾赛与速腾聚创供激光雷达。",
+      "points": [
+        "华为：ADS全栈方案（芯片+算法+域控），鸿蒙座舱协同",
+        "地平线：征程系列芯片，服务多家主机厂与Tier1",
+        "Momenta/大疆车载：算法方案商，性价比路线",
+        "禾赛科技/速腾聚创：车载激光雷达出货头部",
+        "英伟达：Orin/Thor高算力平台，国内外高端车型常用"
+      ],
+      "metrics": [
+        {
+          "name": "激光雷达出货",
+          "value": "头部企业年出货数十万台级",
+          "caliber": "公司公告",
+          "asOf": "2024",
+          "verify": true
+        }
+      ],
+      "children": [],
+      "related": [
+        "mid-adas-tech",
+        "down-oem-hw"
+      ],
+      "sources": [
+        "公司公告",
+        "公司年报",
+        "招股书"
+      ]
+    },
+    {
+      "id": "mid-cockpit-chip",
+      "title": "座舱芯片与域控",
+      "subtitle": "8155 → 8295",
+      "level": 4,
+      "parentId": "mid-cockpit",
+      "segment": "mid",
+      "type": "tech",
+      "summary": "座舱体验的上限由芯片算力决定，高通8295成为新一代中高端标配，国产芯片在中低端渗透。",
+      "points": [
+        "高通8155：上一代主流，支撑多屏与语音",
+        "高通8295：算力大幅提升，支持大模型上车与多屏渲染",
+        "国产：芯驰、地平线、华为麒麟系列在推进替代",
+        "域控：座舱域与智驾域融合为中央计算+区域控制架构"
+      ],
+      "metrics": [
+        {
+          "name": "主流座舱芯片",
+          "value": "8155/8295",
+          "caliber": "高通骁龙",
+          "asOf": "2024",
+          "verify": true
+        }
+      ],
+      "children": [],
+      "related": [
+        "mid-cockpit-co",
+        "mid-adas-tech"
+      ],
+      "sources": [
+        "公司公告",
+        "行业研究"
+      ]
+    },
+    {
+      "id": "mid-cockpit-co",
+      "title": "座舱域控企业",
+      "subtitle": "德赛西威 / 华阳集团",
+      "level": 4,
+      "parentId": "mid-cockpit",
+      "segment": "mid",
+      "type": "company",
+      "summary": "德赛西威是座舱与智驾域控的头部Tier1，华阳集团强在HUD与座舱产品。",
+      "points": [
+        "德赛西威：座舱域控+智驾域控，客户覆盖主流自主品牌",
+        "华阳集团：HUD、座舱显示与无线充电",
+        "均胜电子：座舱与安全系统，海外客户占比高",
+        "格局：域控向中央计算演进，Tier1与芯片厂深度绑定"
+      ],
+      "metrics": [
+        {
+          "name": "座舱域控单价",
+          "value": "约1000–3000元",
+          "caliber": "中高端车型",
+          "asOf": "2024",
+          "verify": true
+        }
+      ],
+      "children": [],
+      "related": [
+        "mid-cockpit-chip"
+      ],
+      "sources": [
+        "公司公告",
+        "行业研究"
+      ]
+    },
+    {
+      "id": "mid-cast-tech",
+      "title": "免热合金与超大压铸",
+      "subtitle": "零件数量换成本",
+      "level": 4,
+      "parentId": "mid-cast",
+      "segment": "mid",
+      "type": "tech",
+      "summary": "免热处理铝合金让压铸件不必再做热处理变形，6000–9000吨压铸机把后地板一次成型。",
+      "points": [
+        "材料：免热处理铝合金（AlSi系），铸态即达标",
+        "设备：6000–9000吨超大型压铸机，模具寿命与良率是难点",
+        "工艺：真空压铸减少气孔，后处理与检测要求高",
+        "争议：维修成本高、保险费用上升，是否值得仍有分歧"
+      ],
+      "metrics": [
+        {
+          "name": "压铸机吨位",
+          "value": "6000–9000吨",
+          "caliber": "一体化压铸",
+          "asOf": "2024",
+          "verify": true
+        }
+      ],
+      "children": [],
+      "related": [
+        "mid-cast-co",
+        "down-oem-byd"
+      ],
+      "sources": [
+        "公司公告",
+        "行业研究"
+      ]
+    },
+    {
+      "id": "mid-cast-co",
+      "title": "压铸与设备企业",
+      "subtitle": "文灿 / 拓普 / 力劲",
+      "level": 4,
+      "parentId": "mid-cast",
+      "segment": "mid",
+      "type": "company",
+      "summary": "文灿股份与广东鸿图做压铸件，拓普集团做底盘与压铸一体，力劲科技供设备。",
+      "points": [
+        "文灿股份：一体化压铸件，配套新势力",
+        "广东鸿图：传统压铸转型一体化，客户覆盖广",
+        "拓普集团：底盘+压铸+内饰，平台化供应",
+        "力劲科技：超大型压铸机设备供应商"
+      ],
+      "metrics": [
+        {
+          "name": "一体化压铸件单车价值",
+          "value": "千元至数千元级",
+          "caliber": "后地板等大件",
+          "asOf": "2024",
+          "verify": true
+        }
+      ],
+      "children": [],
+      "related": [
+        "mid-cast-tech"
+      ],
+      "sources": [
+        "公司公告",
+        "行业研究"
+      ]
+    },
+    {
+      "id": "down-oem-byd",
+      "title": "比亚迪",
+      "subtitle": "垂直一体化的规模玩家",
+      "level": 4,
+      "parentId": "down-oem",
+      "segment": "down",
+      "type": "company",
+      "summary": "从电池、电机、电控到整车几乎全部自研自产，用规模与垂直一体化把成本压到极限。",
+      "points": [
+        "技术：刀片电池、DM-i/DM-p混动、e平台3.0、易四方",
+        "产品矩阵：王朝+海洋+腾势+方程豹+仰望，覆盖10万到百万级",
+        "垂直一体化：电池、功率半导体、电机、部分芯片自供",
+        "出海：泰国、巴西、匈牙利、乌兹别克斯坦建厂",
+        "风险：价格战下的单车利润、海外关税与本地化要求"
+      ],
+      "metrics": [
+        {
+          "name": "年销量",
+          "value": "400万辆级",
+          "caliber": "含出口，公司公告",
+          "asOf": "2024",
+          "verify": true
+        },
+        {
+          "name": "新能源渗透",
+          "value": "全系新能源",
+          "caliber": "2022年起停产燃油车",
+          "asOf": "2024",
+          "verify": true
+        }
+      ],
+      "children": [],
+      "related": [
+        "mid-bat-byd",
+        "down-route",
+        "down-oem-sales"
+      ],
+      "sources": [
+        "公司公告",
+        "乘联会"
+      ]
+    },
+    {
+      "id": "down-oem-nf",
+      "title": "新势力：理想 / 蔚来 / 小鹏 / 零跑 / 小米",
+      "subtitle": "各自押注一条差异化路线",
+      "level": 4,
+      "parentId": "down-oem",
+      "segment": "down",
+      "type": "company",
+      "summary": "理想押增程与家庭场景，蔚来押换电与服务，小鹏押智驾，零跑押性价比，小米押生态与流量。",
+      "points": [
+        "理想：增程+家庭六座，产品定义能力强，纯电MPV是第二曲线",
+        "蔚来：换电网络+服务体系+多品牌（乐道、萤火虫）",
+        "小鹏：智驾与端到端，MONA下探10–15万价格带",
+        "零跑：全域自研+性价比，与Stellantis合作出海",
+        "小米：生态引流+流量打法，首款车快速上量"
+      ],
+      "metrics": [
+        {
+          "name": "头部新势力年交付",
+          "value": "数十万辆级",
+          "caliber": "公司公告",
+          "asOf": "2024",
+          "verify": true
+        }
+      ],
+      "children": [],
+      "related": [
+        "down-route-erev",
+        "down-chg-tech",
+        "down-oem-hw"
+      ],
+      "sources": [
+        "公司公告",
+        "乘联会"
+      ]
+    },
+    {
+      "id": "down-oem-hw",
+      "title": "华为系：问界 / 智界 / 享界 / 尊界",
+      "subtitle": "把智驾与座舱当卖点",
+      "level": 4,
+      "parentId": "down-oem",
+      "segment": "down",
+      "type": "company",
+      "summary": "华为不造车，但用ADS智驾+鸿蒙座舱深度参与定义，问界是验证这套模式最成功的样本。",
+      "points": [
+        "合作模式：鸿蒙智行（深度参与定义/渠道）、HI模式（提供全栈方案）",
+        "卖点：城市NOA、鸿蒙座舱、生态互联",
+        "代表车型：问界M系列、智界S7/R7、享界S9、尊界S800",
+        "争议：合作方品牌独立性与利润分配",
+        "影响：把智驾从“配置”变成“定价权”"
+      ],
+      "metrics": [
+        {
+          "name": "鸿蒙智行年交付",
+          "value": "数十万辆级",
+          "caliber": "官方发布",
+          "asOf": "2024",
+          "verify": true
+        }
+      ],
+      "children": [],
+      "related": [
+        "mid-adas-co",
+        "mid-adas-tech"
+      ],
+      "sources": [
+        "公司公告",
+        "官方发布"
+      ]
+    },
+    {
+      "id": "down-oem-sales",
+      "title": "销量与渗透率",
+      "subtitle": "千万辆与四五成渗透",
+      "level": 4,
+      "parentId": "down-oem",
+      "segment": "down",
+      "type": "metric",
+      "summary": "中国新能源汽车年销千万辆级，乘用车零售渗透率已达45%–50%，增速从爆发转向结构替换。",
+      "points": [
+        "口径：中汽协（批发，含出口）vs 乘联会（零售），两者数值不同，引用必须写清",
+        "规模：年销千万辆级，出口百万辆级【需复核】",
+        "渗透率：乘用车零售口径45%–50%，单月曾超50%【需复核】",
+        "结构：A00/A0级代步车与20万级家用车是两大主力",
+        "趋势：增速放缓，价格战与以旧换新政策是短期变量"
+      ],
+      "metrics": [
+        {
+          "name": "年销量",
+          "value": "约1286万辆",
+          "caliber": "中汽协，含出口",
+          "asOf": "2024",
+          "verify": true
+        },
+        {
+          "name": "零售渗透率",
+          "value": "45%–50%",
+          "caliber": "乘联会",
+          "asOf": "2024",
+          "verify": true
+        }
+      ],
+      "children": [],
+      "related": [
+        "down-oem-byd",
+        "ov"
+      ],
+      "sources": [
+        "中汽协",
+        "乘联会",
+        "海关总署"
+      ]
+    },
+    {
+      "id": "down-route-cmp",
+      "title": "三路线对比",
+      "subtitle": "纯电 / 插混 / 增程",
+      "level": 4,
+      "parentId": "down-route",
+      "segment": "down",
+      "type": "comparison",
+      "summary": "纯电使用成本最低但依赖补能，插混最全能但结构复杂，增程体验最接近纯电但高速能耗偏高。",
+      "points": [
+        "纯电BEV：结构简单、保养便宜、智能化上限高；短板是补能与冬季衰减",
+        "插混PHEV：可油可电无焦虑；短板是结构复杂、亏电油耗与重量",
+        "增程EREV：大电池+小增程器，开发周期短；短板是高速能耗与部分政策限制",
+        "成本：同级别纯电电池成本最高，增程电池较小但多了增程器",
+        "适用：有家充选纯电，长途多选插混，补能差但想纯电体验选增程"
+      ],
+      "metrics": [
+        {
+          "name": "插混+增程份额",
+          "value": "约三到四成",
+          "caliber": "新能源乘用车批发结构",
+          "asOf": "2024",
+          "verify": true
+        }
+      ],
+      "children": [],
+      "related": [
+        "down-route-erev",
+        "down-oem-byd",
+        "down-oem-nf"
+      ],
+      "sources": [
+        "乘联会",
+        "公司公告"
+      ]
+    },
+    {
+      "id": "down-route-erev",
+      "title": "增程式",
+      "subtitle": "大电池 + 小增程器",
+      "level": 4,
+      "parentId": "down-route",
+      "segment": "down",
+      "type": "tech",
+      "summary": "增程器只发电不驱动，体验接近纯电、开发周期短，代价是高速工况能耗偏高。",
+      "points": [
+        "结构：电池+增程器（发动机+发电机）+驱动电机，发动机不直驱",
+        "优势：纯电驾驶质感、无里程焦虑、平台可复用纯电车型",
+        "短板：高速亏电油耗高、车重增加、部分城市政策区别对待【需复核】",
+        "代表：理想L系列、问界M系列、零跑C系列、深蓝",
+        "趋势：大电池增程（纯电续航200km+）成为主流配置"
+      ],
+      "metrics": [
+        {
+          "name": "主流纯电续航",
+          "value": "200km以上",
+          "caliber": "CLTC，增程车型",
+          "asOf": "2025",
+          "verify": true
+        }
+      ],
+      "children": [],
+      "related": [
+        "down-oem-nf",
+        "down-oem-hw",
+        "down-route-cmp"
+      ],
+      "sources": [
+        "公司公告",
+        "乘联会"
+      ]
+    },
+    {
+      "id": "down-chg-tech",
+      "title": "超充与换电",
+      "subtitle": "800V + 4C，或3分钟换电",
+      "level": 4,
+      "parentId": "down-chg",
+      "segment": "down",
+      "type": "tech",
+      "summary": "超充靠800V高压平台+4C电芯把补能压到十几分钟，换电靠标准化电池包做到3–5分钟。",
+      "points": [
+        "超充：800V平台 + 4C/5C电芯 + 液冷枪线，单枪480kW级，需配套储能缓解电网冲击",
+        "换电：蔚来乘用车换电站（千座级）、奥动营运车换电",
+        "换电难点：电池包标准化、车企间不互通、单站投资高",
+        "经济模型：单站日换电次数决定盈亏，营运车场景更容易跑通",
+        "趋势：超充与换电并存，商用车与营运车更偏换电"
+      ],
+      "metrics": [
+        {
+          "name": "超充功率",
+          "value": "200–480kW级",
+          "caliber": "车型/桩发布口径",
+          "asOf": "2025",
+          "verify": true
+        },
+        {
+          "name": "换电时间",
+          "value": "3–5分钟",
+          "caliber": "蔚来/奥动",
+          "asOf": "2024",
+          "verify": true
+        }
+      ],
+      "children": [],
+      "related": [
+        "down-chg-data",
+        "mid-edrive-tech",
+        "down-oem-nf"
+      ],
+      "sources": [
+        "公司公告",
+        "中国充电联盟"
+      ]
+    },
+    {
+      "id": "down-chg-data",
+      "title": "桩数量与车桩比",
+      "subtitle": "口径不同，结论能反转",
+      "level": 4,
+      "parentId": "down-chg",
+      "segment": "down",
+      "type": "metric",
+      "summary": "公共桩百万台量级，含私桩口径下车桩比更乐观；只算公共桩则明显紧张，引用必须标注口径。",
+      "points": [
+        "公共桩：百万台量级，直流快充占比约四成【需复核】",
+        "私桩：随车配建，数量与销量强相关",
+        "车桩比：含私桩约2:1–3:1，仅公共桩则显著更高，两个数不能混用",
+        "分布：广东、江苏、浙江等沿海省份集中，县域与高速仍是短板",
+        "利用率：公共桩平均利用率偏低，盈利依赖位置与运营"
+      ],
+      "metrics": [
+        {
+          "name": "公共桩保有量",
+          "value": "百万台量级",
+          "caliber": "中国充电联盟，仅公共桩",
+          "asOf": "2024",
+          "verify": true
+        },
+        {
+          "name": "公共桩直流占比",
+          "value": "约四成",
+          "caliber": "中国充电联盟",
+          "asOf": "2024",
+          "verify": true
+        }
+      ],
+      "children": [],
+      "related": [
+        "down-chg-tech",
+        "ov"
+      ],
+      "sources": [
+        "中国充电联盟",
+        "行业研究"
+      ]
+    },
+    {
+      "id": "down-rec-tech",
+      "title": "湿法 vs 火法回收",
+      "subtitle": "回收率与投资的取舍",
+      "level": 4,
+      "parentId": "down-rec",
+      "segment": "down",
+      "type": "tech",
+      "summary": "湿法回收镍钴锰95%以上、锂85%–90%，但投资大；火法简单但能耗高、回收率低。",
+      "points": [
+        "湿法：拆解→浸出（酸/碱）→萃取→沉淀，得到硫酸镍钴、碳酸锂",
+        "火法：高温熔炼得到合金，流程短但能耗高、锂损失大",
+        "梯次利用：容量70%–80%的电池用于储能、备电、低速车",
+        "壁垒：环保资质、渠道（谁能收到退役电池）、白名单",
+        "经济性：金属价格高时回收利润好，锂价低迷时盈利承压"
+      ],
+      "metrics": [
+        {
+          "name": "镍钴锰回收率",
+          "value": "95%以上",
+          "caliber": "湿法先进水平",
+          "asOf": "2024",
+          "verify": true
+        },
+        {
+          "name": "锂回收率",
+          "value": "85%–90%",
+          "caliber": "湿法",
+          "asOf": "2024",
+          "verify": true
+        }
+      ],
+      "children": [],
+      "related": [
+        "down-rec-data",
+        "up-li-price"
+      ],
+      "sources": [
+        "工信部白名单",
+        "公司公告",
+        "行业研究"
+      ]
+    },
+    {
+      "id": "down-rec-data",
+      "title": "退役量与回收格局",
+      "subtitle": "第一批电池正在集中退役",
+      "level": 4,
+      "parentId": "down-rec",
+      "segment": "down",
+      "type": "metric",
+      "summary": "2016–2018年装车的电池正集中退役，退役量进入十万吨级并向百万吨级迈进，但正规渠道回收占比仍待提升。",
+      "points": [
+        "退役节奏：商用车（出租/公交）先退役，乘用车随后",
+        "规模：退役量十万吨级并快速增长，具体数值口径差异大【需复核】",
+        "主体：邦普循环（宁德时代系）、格林美、华友循环、天奇股份",
+        "政策：白名单管理、生产者责任延伸、溯源平台",
+        "痛点：非正规小作坊高价抢货，正规企业产能利用率不足"
+      ],
+      "metrics": [
+        {
+          "name": "退役电池量",
+          "value": "十万吨级",
+          "caliber": "行业估算，含梯次",
+          "asOf": "2024",
+          "verify": true
+        }
+      ],
+      "children": [],
+      "related": [
+        "down-rec-tech",
+        "up-li-co"
+      ],
+      "sources": [
+        "工信部",
+        "行业研究",
+        "公司公告"
+      ]
+    }
+  ]
+}
+;
+window.FAQ_DATA = {
+  "meta": {
+    "title": "链条问答 · 预设问答库",
+    "version": "1.0",
+    "updatedAt": "2026-11",
+    "itemCount": 22,
+    "usage": "前端用 keywords 做包含匹配打分（命中词数/权重），取最高分返回 answer，并在答案下方渲染 drill 按钮跳转到对应节点。",
+    "dataPolicy": "答案中的数据均为数量级参考，需以最新口径复核。"
+  },
+  "items": [
+    {
+      "id": "q01",
+      "question": "碳酸锂为什么从60万跌到10万以内？",
+      "keywords": ["碳酸锂", "锂价", "锂", "价格", "跌", "60万", "10万"],
+      "answer": "核心是供需反转。2021–2022年需求爆发、矿山扩产滞后加上囤货，电池级碳酸锂现货均价一度冲到约60万元/吨（2022年11月，SMM口径）；2023年起盐湖与非洲矿集中放量、库存去化、需求增速放缓，价格一路回落到2025年的7–10万元/吨区间（需复核）。传导上是锂价→正极→电芯→整车，通常滞后1–2个季度。",
+      "drill": [
+        { "nodeId": "up-li-price", "label": "看价格周期与观察指标" },
+        { "nodeId": "up-li-sl", "label": "看盐湖提锂的成本下限" },
+        { "nodeId": "up-cat-lfp", "label": "看正极为什么最敏感" }
+      ],
+      "related": ["q02", "q04"]
+    },
+    {
+      "id": "q02",
+      "question": "磷酸铁锂和三元到底怎么选？",
+      "keywords": ["磷酸铁锂", "铁锂", "三元", "LFP", "NCM", "正极", "选哪个", "对比"],
+      "answer": "看车型定位。铁锂成本低、安全性好、循环寿命长，缺点是能量密度低、低温性能差，靠高压实密度和4C快充补短板，国内装机约七成；三元能量密度高、低温好，但含钴含镍成本高、热稳定性差，主要用于高端长续航和部分海外车型，国内约三成（2024年，需复核）。同价位家用车主推铁锂，高端性能车更偏三元或高镍。",
+      "drill": [
+        { "nodeId": "up-cat-lfp", "label": "看铁锂的技术迭代" },
+        { "nodeId": "up-cat-ncm", "label": "看三元与镍钴前驱体" },
+        { "nodeId": "mid-bat-data", "label": "看装机结构数据" }
+      ],
+      "related": ["q01", "q03"]
+    },
+    {
+      "id": "q03",
+      "question": "为什么说电池占了整车成本的一大半？",
+      "keywords": ["电池成本", "整车成本", "占多少", "成本占比", "三到四成"],
+      "answer": "准确的说是三到四成，不是一大半（A级纯电车型估算，需复核）。电池包内部：原材料占70%–80%，其中正极最贵（占电芯材料成本30%–40%），其次负极8%–12%、电解液8%–12%、隔膜5%–10%，剩下是结构件与制造费用。所以降本主要看两条：锂价周期和结构创新（CTP/刀片）。",
+      "drill": [
+        { "nodeId": "mid-bat", "label": "看电池的成本结构" },
+        { "nodeId": "mid-bat-struct", "label": "看结构创新怎么降本" },
+        { "nodeId": "up-cat", "label": "看正极为什么最贵" }
+      ],
+      "related": ["q01", "q02"]
+    },
+    {
+      "id": "q04",
+      "question": "宁德时代和比亚迪的电池业务有什么不一样？",
+      "keywords": ["宁德时代", "比亚迪", "弗迪", "电池业务", "区别", "对比", "份额"],
+      "answer": "两种模式。宁德时代是独立供应商，全球装机份额约35%–38%（2024年，SNE Research口径，需复核），产品线覆盖麒麟（三元高能量密度）与神行（铁锂4C快充），客户几乎囊括主流车企，正在匈牙利、西班牙建厂。比亚迪弗迪是垂直一体化自供为主，核心产品是刀片电池+CTB，国内份额约二成，外供比例是最大看点。一个卖技术广度，一个卖体系成本。",
+      "drill": [
+        { "nodeId": "mid-bat-catl", "label": "看宁德时代" },
+        { "nodeId": "mid-bat-byd", "label": "看弗迪电池" },
+        { "nodeId": "mid-bat-data", "label": "看装机与产能利用率" }
+      ],
+      "related": ["q03", "q05"]
+    },
+    {
+      "id": "q05",
+      "question": "CTP、刀片、CTC 这些名词是什么意思？",
+      "keywords": ["CTP", "CTC", "CTB", "刀片", "麒麟", "神行", "结构", "无模组"],
+      "answer": "都是在“用结构换空间和成本”。CTP（Cell to Pack）是跳过模组，电芯直接成包，麒麟电池体积利用率约72%（宁德时代发布口径）；刀片电池是把电芯做成长条形并当结构件用；CTB/CTC 是再把电池和车身或底盘一体化，进一步省零件。代价是维修性变差、热管理更难、对BMS要求更高。",
+      "drill": [
+        { "nodeId": "mid-bat-struct", "label": "看三种结构创新对比" },
+        { "nodeId": "mid-bat-cell", "label": "看方形/圆柱/软包形态" },
+        { "nodeId": "mid-bat", "label": "回到动力电池" }
+      ],
+      "related": ["q03", "q06"]
+    },
+    {
+      "id": "q06",
+      "question": "800V 和碳化硅（SiC）是什么关系？",
+      "keywords": ["800V", "800伏", "碳化硅", "SiC", "IGBT", "高压平台", "超充", "快充"],
+      "answer": "800V是电压平台，SiC是实现它的关键器件。电压从400V提到800V，同样功率下电流减半、线束更细、损耗更低，充电功率能做到200–480kW级；但传统IGBT在高压下损耗大，所以要换成耐高压、开关损耗低的SiC MOSFET（成本仍高于IGBT数倍，需复核）。配套还需要4C以上电芯和液冷枪线。",
+      "drill": [
+        { "nodeId": "mid-edrive-tech", "label": "看电机电控与SiC" },
+        { "nodeId": "down-chg-tech", "label": "看超充与换电" },
+        { "nodeId": "mid-bat-struct", "label": "看4C电芯怎么来的" }
+      ],
+      "related": ["q13", "q05"]
+    },
+    {
+      "id": "q07",
+      "question": "换电模式为什么一直没普及？",
+      "keywords": ["换电", "换电站", "蔚来", "奥动", "电池标准化", "补能"],
+      "answer": "三个硬约束：电池包不标准化（各家尺寸、接口、通信协议不同，车企之间不互通）、单站投资高且需要备大量电池资产、盈利完全取决于日换电次数。所以乘用车只有蔚来（千座级）成规模，营运车（出租车、网约车）因为路线固定、换电频次高，反而是奥动这类模式更容易跑通。超充正在从另一侧挤压换电的场景。",
+      "drill": [
+        { "nodeId": "down-chg-tech", "label": "看超充与换电的技术对比" },
+        { "nodeId": "down-chg-data", "label": "看桩数量与车桩比口径" },
+        { "nodeId": "down-chg", "label": "回到补能环节" }
+      ],
+      "related": ["q06", "q08"]
+    },
+    {
+      "id": "q08",
+      "question": "增程式到底算不算新能源？",
+      "keywords": ["增程", "增程式", "EREV", "算不算", "新能源", "理想", "问界"],
+      "answer": "从技术和政策上都算。增程器只发电不直驱，驱动永远靠电机，所以驾驶质感接近纯电，也能拿新能源牌照（个别城市对增程/插混有额外限制，需按当地政策核对）。它真正的争议是效率：高速工况下“油→电→驱动”多一次转换，亏电油耗偏高。2023年后插混+增程合计份额升到三到四成（需复核），说明它解决的是补能焦虑而不是技术优越性。",
+      "drill": [
+        { "nodeId": "down-route-erev", "label": "看增程的结构与代表车型" },
+        { "nodeId": "down-route-cmp", "label": "看三条路线对比" },
+        { "nodeId": "down-oem-nf", "label": "看新势力怎么押注" }
+      ],
+      "related": ["q09", "q15"]
+    },
+    {
+      "id": "q09",
+      "question": "插混为什么这两年卖得这么好？",
+      "keywords": ["插混", "PHEV", "DM-i", "混动", "为什么卖得好", "份额"],
+      "answer": "因为它同时解决了两个痛点：能上绿牌、能免购置税（政策有期限，需按最新文件核对），又没有里程焦虑。比亚迪DM-i把成本打下来做到“油电同价”，直接把10–20万主力价格带拿下。代价是结构复杂（两套动力系统）、车重增加、亏电油耗和排放表现参差。本质上是充电基建还没铺满之前的过渡最优解。",
+      "drill": [
+        { "nodeId": "down-route-cmp", "label": "看三路线对比" },
+        { "nodeId": "down-oem-byd", "label": "看比亚迪的DM路线" },
+        { "nodeId": "down-oem-sales", "label": "看销量与渗透率数据" }
+      ],
+      "related": ["q08", "q15"]
+    },
+    {
+      "id": "q10",
+      "question": "20万以内的车，智驾能做到什么水平？",
+      "keywords": ["智驾", "智能驾驶", "NOA", "城市NOA", "20万", "便宜", "激光雷达", "成本"],
+      "answer": "能做到高速NOA标配、部分车型城市NOA可用。关键在硬件成本下探：激光雷达单价从数万元降到千元级（2025年，需复核），加上Orin/征程6这类中算力平台，整套硬件压到数千元至万元级。所以10–20万区间已经出现“纯视觉+少量雷达”的方案，体验差距主要在算法迭代和开城速度，而不是硬件堆料。",
+      "drill": [
+        { "nodeId": "mid-adas-tech", "label": "看感知路线与成本" },
+        { "nodeId": "mid-adas-co", "label": "看华为/地平线/禾赛" },
+        { "nodeId": "down-oem-hw", "label": "看华为系怎么把智驾变定价权" }
+      ],
+      "related": ["q11", "q16"]
+    },
+    {
+      "id": "q11",
+      "question": "纯视觉方案不用激光雷达，靠谱吗？",
+      "keywords": ["纯视觉", "激光雷达", "特斯拉", "FSD", "感知", "靠谱", "融合"],
+      "answer": "能用，但边界不同。纯视觉靠海量数据和端到端模型，成本最低、迭代快，难点是暗光、逆光和异形障碍物的识别；激光雷达提供直接测距，对“没见过的东西”更稳，代价是成本和整车集成复杂度。中国品牌多数选融合路线，本质是用硬件确定性换算法不确定性。谁更好取决于数据规模，不取决于传感器数量。",
+      "drill": [
+        { "nodeId": "mid-adas-tech", "label": "看两条路线的取舍" },
+        { "nodeId": "mid-adas-co", "label": "看激光雷达供应商格局" },
+        { "nodeId": "mid-adas", "label": "回到智能驾驶" }
+      ],
+      "related": ["q10"]
+    },
+    {
+      "id": "q12",
+      "question": "一体化压铸是不是智商税？",
+      "keywords": ["一体化压铸", "压铸", "大压铸", "维修", "特斯拉", "9000吨", "智商税"],
+      "answer": "对车企不是，对车主可能是。对车企：后地板从几十个零件合成一件，省模具、省焊点、提节拍，6000–9000吨压铸机一次成型，规模越大越划算。对车主：一旦碰撞伤到铸件，往往要整块更换，维修和保险成本明显上升。所以它本质是“把制造端的效率收益，转移了一部分给售后端”，争议合理。",
+      "drill": [
+        { "nodeId": "mid-cast-tech", "label": "看免热合金与工艺难点" },
+        { "nodeId": "mid-cast-co", "label": "看文灿/拓普/力劲" },
+        { "nodeId": "mid-cast", "label": "回到一体化压铸" }
+      ],
+      "related": ["q05"]
+    },
+    {
+      "id": "q13",
+      "question": "电芯价格还能再降吗？",
+      "keywords": ["电芯价格", "降价", "元/Wh", "成本", "还能降", "价格战"],
+      "answer": "空间在收窄。铁锂方形电芯已到0.3–0.4元/Wh（2025年，需复核），距离部分厂商成本线很近，继续降主要靠三件事：锂价继续下行（不可控）、结构创新（CTP/CTC摊薄结构件与制造费用）、良率与产能利用率提升。行业名义产能远超需求，二三线厂开工率偏低，价格战短期不会停，但“再腰斩”不现实。",
+      "drill": [
+        { "nodeId": "mid-bat-data", "label": "看价格与产能利用率" },
+        { "nodeId": "mid-bat-struct", "label": "看结构降本路径" },
+        { "nodeId": "up-li-price", "label": "看锂价这个最大变量" }
+      ],
+      "related": ["q01", "q03"]
+    },
+    {
+      "id": "q14",
+      "question": "钠电池和固态电池会替代锂电池吗？",
+      "keywords": ["钠电池", "钠离子", "固态电池", "半固态", "替代", "下一代", "技术路线"],
+      "answer": "短期都不会全面替代。钠电池的优势是成本与低温、资源不受锂约束，短板是能量密度低，更适合储能、两轮车和A00级小车；固态电池能量密度和安全上限更高，但界面阻抗、成本、量产良率都还没解决，行业普遍先走半固态过渡（时间表各家口径差异很大，需复核）。十年内更可能是“锂为主、钠补位、固态攻高端”的格局。",
+      "drill": [
+        { "nodeId": "mid-bat", "label": "看电池技术全景" },
+        { "nodeId": "up-li", "label": "看锂资源的约束" },
+        { "nodeId": "mid-bat-cell", "label": "看电芯形态演进" }
+      ],
+      "related": ["q02", "q13"]
+    },
+    {
+      "id": "q15",
+      "question": "新能源渗透率是不是快见顶了？",
+      "keywords": ["渗透率", "见顶", "天花板", "增速", "销量", "50%"],
+      "answer": "增速在放缓，但还没见顶。乘用车零售渗透率已到45%–50%（2024年，乘联会口径，需复核），单月曾超过50%。剩下的空间主要在：10万以下燃油车替换、县域与农村市场、商用车电动化。结构性变化比总量更重要——纯电份额被插混和增程稀释，价格战与以旧换新是短期主要变量。",
+      "drill": [
+        { "nodeId": "down-oem-sales", "label": "看销量与渗透率口径" },
+        { "nodeId": "down-route-cmp", "label": "看技术路线结构变化" },
+        { "nodeId": "ov", "label": "回到总览" }
+      ],
+      "related": ["q09", "q19"]
+    },
+    {
+      "id": "q16",
+      "question": "中国车企出海欧洲，卡在哪？",
+      "keywords": ["出海", "出口", "欧洲", "关税", "反补贴", "贸易壁垒", "建厂"],
+      "answer": "三重关卡：关税（欧盟对中国产电动车加征反补贴税，不同企业税率不同，需查最新公告）、本地化要求（想避税就得在欧洲建厂，匈牙利、西班牙是热门落点）、合规（碳足迹、电池护照、数据与安全法规）。所以头部企业的动作不是“多卖车”，而是“把产能搬过去”，比亚迪、宁德时代都在欧洲有工厂布局。",
+      "drill": [
+        { "nodeId": "down-oem-byd", "label": "看比亚迪的海外建厂" },
+        { "nodeId": "mid-bat-catl", "label": "看宁德时代的欧洲产能" },
+        { "nodeId": "down-oem", "label": "回到整车格局" }
+      ],
+      "related": ["q17"]
+    },
+    {
+      "id": "q17",
+      "question": "上游成本曲线到底是什么？",
+      "keywords": ["成本曲线", "成本", "盐湖", "锂辉石", "云母", "上游", "现金成本"],
+      "answer": "把同一产品的所有产能按现金成本从低到高排队，就得到成本曲线，它决定了价格跌到哪里会减产。锂的三条来源大致是：盐湖提锂约3–5万元/吨LCE（最低）、锂辉石约4–8万元、锂云母约6–10万元（行业估算，需复核）。价格跌破某条曲线，那一档产能就停产，供给收缩，价格才有底。这就是为什么锂价跌到7–10万就跌不太动了。",
+      "drill": [
+        { "nodeId": "up-li-sl", "label": "看盐湖提锂的成本优势" },
+        { "nodeId": "up-li-price", "label": "看价格与成本的关系" },
+        { "nodeId": "up-li-co", "label": "看谁的产能最靠左" }
+      ],
+      "related": ["q01", "q13"]
+    },
+    {
+      "id": "q18",
+      "question": "电池回收真的赚钱吗？",
+      "keywords": ["回收", "退役电池", "梯次利用", "湿法", "火法", "赚钱", "白名单"],
+      "answer": "看金属价格。湿法回收镍钴锰回收率95%以上、锂85%–90%（需复核），金属价格高时利润很可观；锂价跌到7–10万元/吨后，回收的经济性明显承压。另一个问题是渠道：正规白名单企业收不到货，小作坊出价更高，导致正规产能利用率不足。所以“城市矿山”这个说法成立，但盈利高度依赖金属周期和渠道控制。",
+      "drill": [
+        { "nodeId": "down-rec-tech", "label": "看湿法vs火法与回收率" },
+        { "nodeId": "down-rec-data", "label": "看退役量与渠道格局" },
+        { "nodeId": "up-li-price", "label": "看金属价格怎么影响回收" }
+      ],
+      "related": ["q01", "q17"]
+    },
+    {
+      "id": "q19",
+      "question": "车桩比到底是多少？为什么每个说法都不一样？",
+      "keywords": ["车桩比", "充电桩", "桩", "口径", "多少", "公共桩"],
+      "answer": "因为分母不同。含私桩口径约2:1–3:1，看起来还不错；只算公共桩，比例会明显更紧张。公共桩保有量是百万台量级（2024年，中国充电联盟口径，需复核），其中直流快充约四成。所以看到任何车桩比，先问三件事：含不含私桩、是保有量还是增量、统计口径是哪家机构。这也解释了为什么“数据都不矛盾，结论却相反”。",
+      "drill": [
+        { "nodeId": "down-chg-data", "label": "看桩数量与口径说明" },
+        { "nodeId": "down-chg-tech", "label": "看超充与换电" },
+        { "nodeId": "down-chg", "label": "回到补能环节" }
+      ],
+      "related": ["q07"]
+    },
+    {
+      "id": "q20",
+      "question": "为什么有的数据说宁德时代份额40%，有的说37%？",
+      "keywords": ["市占率", "份额", "口径", "国内", "全球", "宁德时代", "SNE"],
+      "answer": "分母不同。国内份额用中国汽车动力电池产业创新联盟的国内装机量口径，约四成；全球份额用SNE Research的全球装机口径，约35%–38%（2024年，需复核）。另外还有“装机量”与“出货量”的差别——出货含库存与出口，装机只算真正上车。所以引用份额必须写清：哪家机构、国内还是全球、装机还是出货。",
+      "drill": [
+        { "nodeId": "mid-bat-data", "label": "看装机数据与口径" },
+        { "nodeId": "mid-bat-catl", "label": "看宁德时代" },
+        { "nodeId": "mid-bat", "label": "回到动力电池" }
+      ],
+      "related": ["q04", "q19"]
+    },
+    {
+      "id": "q21",
+      "question": "石墨化是什么？为什么负极厂都在抢着自建？",
+      "keywords": ["石墨化", "负极", "人造石墨", "电费", "自建", "成本"],
+      "answer": "石墨化是把前驱体加热到2800–3200℃让碳原子重排成石墨结构，这一步吃掉人造石墨的大部分成本和能耗。成本里电费占比高，所以负极厂都往内蒙古、四川、云南这些低电价区建石墨化产能。自供石墨化等于自建电价优势，行业估算成本约0.6–1.0万元/吨（需复核）。行业过剩时，谁的石墨化自供率高，谁就能扛住价格战。",
+      "drill": [
+        { "nodeId": "up-ane-graphite", "label": "看石墨化工艺与成本" },
+        { "nodeId": "up-ane-co", "label": "看璞泰来/贝特瑞" },
+        { "nodeId": "up-ane", "label": "回到负极材料" }
+      ],
+      "related": ["q13", "q02"]
+    },
+    {
+      "id": "q22",
+      "question": "隔膜和电解液为什么叫“安全件”？",
+      "keywords": ["隔膜", "电解液", "安全", "涂覆", "六氟", "LiFSI", "热失控"],
+      "answer": "因为它们在电芯内部直接决定“会不会短路、短路后会不会烧”。隔膜是把正负极物理隔开的薄膜，湿法更薄更均匀、干法成本低耐高压，涂覆陶瓷/芳纶/PVDF是为了耐高温收缩；电解液负责离子传输，六氟磷酸锂（LiPF6）是主盐，添加剂（VC/FEC）配方决定循环与产气。所以高端电芯的差距，很大一部分藏在这两个环节的配方和工艺里。",
+      "drill": [
+        { "nodeId": "up-sep-ele-tech", "label": "看湿法隔膜与LiFSI" },
+        { "nodeId": "up-sep-ele-co", "label": "看恩捷/天赐/星源" },
+        { "nodeId": "up-sep-ele", "label": "回到隔膜与电解液" }
+      ],
+      "related": ["q03", "q02"]
+    }
+  ]
+}
+;
